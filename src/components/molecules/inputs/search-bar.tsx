@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TInput } from '@types-app/input.type'
 import Input from '@atoms/inputs/input'
 import MagnifyingGlassIcon from '@atoms/icons/magnifying-glass-icon'
@@ -12,18 +12,24 @@ import MagnifyingGlassIcon from '@atoms/icons/magnifying-glass-icon'
 function SearchBar ({
   children
 }: TInput) {
+  const [value, setValue] = useState('')
+
   return (
     <div className={`
     flex items-center
     rounded-lg
     bg-fond_claire
+    relative
     `}
     >
-      <MagnifyingGlassIcon />
+      <div className='absolute pl-2'>
+        <MagnifyingGlassIcon size='w-6 h-6' />
+      </div>
       <Input
-        value=''
+        value={value}
+        padding='py-2 pl-10 pr-4'
         placeholder='Veuillez saisir votre recherche'
-        setValueInput={onchange}
+        setValueInput={setValue}
         // eslint-disable-next-line react/no-children-prop
         children={children}
       />
