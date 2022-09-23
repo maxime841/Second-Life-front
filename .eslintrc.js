@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  ignorePatterns: ['*.json', '.eslintrc.js', '*.css'],
+  ignorePatterns: ['*.json', '.eslintrc.js', '*.css', 'tailwind.config.js'],
   plugins: [
     'react',
     '@typescript-eslint'
