@@ -4,6 +4,12 @@ import './styles/index.css'
 import App from './pages/app'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
+import { HttpInterceptor } from '@config-app/http/http.interceptor'
+import { Store } from '@store/store'
+
+HttpInterceptor.request()
+HttpInterceptor.response()
+Store.darkmode.startCheckDarkMode()
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
