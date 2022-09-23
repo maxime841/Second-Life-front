@@ -26,5 +26,6 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/no-invalid-void-type': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
   }
 }
