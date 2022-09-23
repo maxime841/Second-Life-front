@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  ignorePatterns: ['*.json', '.eslintrc.js'],
+  ignorePatterns: ['*.json', '.eslintrc.js', '*.css'],
   plugins: [
     'react',
     '@typescript-eslint'
