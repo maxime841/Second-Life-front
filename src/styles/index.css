@@ -1,0 +1,19 @@
+/* add your uri of font */
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Kalam:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-size: 1rem;
+  line-height: normal;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
