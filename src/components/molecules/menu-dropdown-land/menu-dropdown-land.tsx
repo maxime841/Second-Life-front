@@ -12,7 +12,7 @@ function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
     <nav className={`relative ${addClass}`}>
       {/* btn dropdown */}
       <Btn click={() => Store.app.toggleStateMenuDropdownLand(open)}>
-        <span>{children}</span>
+        <span className='mr-2'>{children}</span>
         <ChevronDownIcon size='w-4 h-4' />
       </Btn>
 

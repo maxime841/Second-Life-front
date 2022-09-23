@@ -11,7 +11,7 @@ function MenuPrimary () {
       <li>
         <LinkBtn link='/'>
           <HomeIcon size='w-5 h-5' />
-          <span>Home</span>
+          <span className='ml-2'>Home</span>
         </LinkBtn>
       </li>
 
@@ -24,7 +24,7 @@ function MenuPrimary () {
       <li>
         <LinkBtn link='/club'>
           <ClubIcon size='w-5 h-5' />
-          <span>Club</span>
+          <span className='ml-2'>Club</span>
         </LinkBtn>
       </li>
     </ul>
