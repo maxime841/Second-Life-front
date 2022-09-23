@@ -28,14 +28,14 @@ function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
             '
             >
               <li>
-                <LinkText link='/terrain1'>
+                <LinkText link='terrain1'>
                   <span>
                     Terrain1
                   </span>
                 </LinkText>
               </li>
               <li>
-                <LinkText link='/terrain2'>
+                <LinkText link='terrain2'>
                   <span>
                     Terraindsd sdsdsdsd
                     <span> 2</span>
