@@ -23,7 +23,7 @@ function SearchBar ({
     `}
     >
       <div className='absolute pl-2'>
-        <MagnifyingGlassIcon size='w-6 h-6' />
+        <MagnifyingGlassIcon size='w-6 h-6' color='text-black' />
       </div>
       <Input
         value={value}
