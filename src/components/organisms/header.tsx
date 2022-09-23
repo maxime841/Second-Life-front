@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBar from '@molecules/inputs/search-bar'
-import BtnIconDarkMode from '@molecules/btns/btn-dark-mode'
 import MenuPrimary from '@molecules/menu-primary/menu-primary'
+import MenuTool from '@molecules/menu-tool/menu-tool'
 
 function Header () {
   return (
@@ -18,7 +18,7 @@ function Header () {
       <SearchBar value='' placeholder='' setValueInput={undefined}><span>Barre de recherche</span></SearchBar>
 
       {/* menu tool */}
-      <BtnIconDarkMode />
+      <MenuTool />
     </header>
   )
 }

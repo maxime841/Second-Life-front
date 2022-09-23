@@ -17,6 +17,7 @@ function LinkBtn ({
     <NavLink
       to={link}
       onClick={click}
+      end
       className={({ isActive }) => (
         isActive
           ? `
