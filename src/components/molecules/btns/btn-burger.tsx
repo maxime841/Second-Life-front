@@ -17,7 +17,7 @@ function BtnIconMenuBurger ({ children, addClass }: TBtnMenuBurger) {
   const menuBurger = Store.menuBurger.useBurgerMenu()
 
   return (
-    <div className={`display sm:flex md:invisible ${addClass}`}>
+    <div className={`relative display sm:flex md:invisible ${addClass}`}>
       {/* btn dropdown */}
       <Btn click={() => Store.menuBurger.toggleStateMenuBurger(menuBurger)}>
         <span className='mr-2'>{children}</span>
@@ -28,7 +28,9 @@ function BtnIconMenuBurger ({ children, addClass }: TBtnMenuBurger) {
       {
         menuBurger
           ? (
-            <ul className='flex-col items-center justify-around display sm:flex md:invisible'>
+            <ul className='flex-col items-center justify-around display sm:flex md:invisible absolute top-16 left-4 w-32
+            p-2 bg-fond_color_button
+            rounded-lg'>
               {/* link home */}
               <li>
                 <LinkBtn link='/'>
@@ -38,12 +40,14 @@ function BtnIconMenuBurger ({ children, addClass }: TBtnMenuBurger) {
               </li>
 
               {/* dropdown land */}
-              <MenuDropdownLand addClass='mr-2 ml-2'>
-                Terrains
-              </MenuDropdownLand>
+              <div className='mt-2'>
+                <MenuDropdownLand addClass='mr-2 ml-2'>
+                  Terrains
+                </MenuDropdownLand>
+              </div>
 
               {/* link club */}
-              <li>
+              <li className='mt-2'>
                 <LinkBtn link='/club'>
                   <ClubIcon size='w-5 h-5' />
                   <span className='ml-2'>Club</span>
