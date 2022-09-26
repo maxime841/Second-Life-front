@@ -1,4 +1,5 @@
 import Btn from '@atoms/btns/btn'
+import { TLand } from '@types-app/land.type'
 import ChevronDownIcon from '@atoms/icons/chevron-down-icon'
 import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
@@ -10,12 +11,12 @@ const baseURL = 'http://127.0.0.1:8000/api/lands'
 
 function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()
-  const [lands, setLands] = useState([])
+  const [lands, setLands] = useState([] as TLand)
 
   React.useEffect(() => {
     axios.get(baseURL).then(response => {
       console.log(response.data.lands)
-      setLands(response.data.lands)
+      setLands([...response.data.lands])
     })
   }, [])
 
@@ -38,17 +39,26 @@ function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
               rounded-lg
             '
             >
-              {
-                lands.map(land => { 
-                  return
-                  <li>
-                    <LinkText link=terrain{land.id}
-                    <span>
-                      {land.name}
-                    </span>
-                    </LinkText>
-                  </li>
-              }
+              <li>
+                <LinkText link='terrain1'>
+                  <span>
+                    Terrain1
+                  </span>
+                </LinkText>
+              </li>
+              <li>
+                <LinkText link='terrain2'>
+                  <span>
+                    Terraindsd sdsdsdsd
+                    <span> 2</span>
+                  </span>
+                </LinkText>
+              </li>
+              <li><LinkText link='terrain3'>
+                <span>
+                  {}
+                </span>
+              </LinkText></li>
             </ul>
           )
           : null
