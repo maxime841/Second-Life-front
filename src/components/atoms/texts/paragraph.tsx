@@ -12,7 +12,6 @@ function Paragraph ({ children }: TText) {
     <p
       className={`
       text-center
-      mb-12
       `}
     >
       {children}
