@@ -3,10 +3,21 @@ import ChevronDownIcon from '@atoms/icons/chevron-down-icon'
 import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
 import { TMenuDropdownLand } from '@types-app/menu.type'
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
+
+const baseURL = 'http://127.0.0.1:8000/api/lands'
 
 function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()
+  const [lands, setLands] = useState(null)
+
+  React.useEffect(() => {
+    axios.get(baseURL).then(response => {
+      console.log(response.data.lands)
+      setLands(response.data.lands)
+    })
+  }, [])
 
   return (
     <nav className={`relative ${addClass}`}>
@@ -42,6 +53,11 @@ function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
                   </span>
                 </LinkText>
               </li>
+              <li><LinkText link='terrain3'>
+                <span>
+                  {lands}
+                </span>
+              </LinkText></li>
             </ul>
           )
           : null
