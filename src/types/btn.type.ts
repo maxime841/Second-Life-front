@@ -37,3 +37,7 @@ export type TBtnDropdwon = TComponentParent & {
 export interface TBtnDarkMode {
   addClass?: string
 }
+
+export type TBtnMenuBurger = TComponentParent & {
+  addClass?: string
+}
