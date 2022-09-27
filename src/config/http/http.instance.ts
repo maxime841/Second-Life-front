@@ -5,9 +5,9 @@ import axios from 'axios'
  */
 export const http = axios.create({
   baseURL: process.env.REACT_APP_URL_API,
-  withCredentials: true,
+  // withCredentials: true,
   headers: {
-    'Content-Type': 'application/json',
     Accept: 'application/json',
-  },
+    content: 'application/json',
+  }
 })
