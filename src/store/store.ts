@@ -11,29 +11,37 @@ import { OutSideClickHook } from './outside-cLick/outside-click.hook'
 import { TokenHook } from './token/token.hook'
 import { TokenService } from './token/token.service'
 import { TokenStore } from './token/token.store'
+import { userHook } from './user/user.hook'
+import { userService } from './user/user.service'
+import { userStore } from './user/user.store'
 
 export const Store = {
   menuBurger: {
     ...MenuBurgerStore,
     ...MenuBurgerService,
-    ...MenuBurgerHook
+    ...MenuBurgerHook,
   },
   darkmode: {
     ...DarkModeStore,
     ...DarkModeService,
-    ...DarkModeHook
+    ...DarkModeHook,
   },
   token: {
     ...TokenStore,
     ...TokenService,
-    ...TokenHook
+    ...TokenHook,
   },
   outsideClick: {
-    ...OutSideClickHook
+    ...OutSideClickHook,
   },
   app: {
     ...AppStore,
     ...AppService,
-    ...AppHook
-  }
+    ...AppHook,
+  },
+  user: {
+    ...userStore,
+    ...userService,
+    ...userHook,
+  },
 }
