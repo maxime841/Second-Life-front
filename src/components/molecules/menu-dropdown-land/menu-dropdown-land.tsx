@@ -1,24 +1,14 @@
 import Btn from '@atoms/btns/btn'
-import { TLand, TlandsResponse } from '@types-app/land.type'
+import { TLand } from '@types-app/land.type'
 import ChevronDownIcon from '@atoms/icons/chevron-down-icon'
 import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
 import { TMenuDropdownLand } from '@types-app/menu.type'
-import React, { useEffect, useState } from 'react'
-import { http } from '@config-app/http/http.instance'
+import React, { useState } from 'react'
 
 function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()
-  const [lands, setLands] = useState<TLand[]>([])
-
-  useEffect(() => {
-    const getAllLands = async () => {
-      const res = await http.get<TlandsResponse>('lands')
-      setLands([...res.data.lands!])
-    }
-
-    getAllLands()
-  }, [])
+  const [lands] = useState<TLand[]>([])
 
   return (
     <nav className={`relative ${addClass}`}>

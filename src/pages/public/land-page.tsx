@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Land () {
+function OneLand () {
   return (
     <div>LandPage</div>
   )
 }
 
-export default Land
+export default OneLand
