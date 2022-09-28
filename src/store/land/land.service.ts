@@ -5,6 +5,6 @@ import { LandStore } from './land.store'
 export const LandService = {
   getAllLands: async () => {
     const res = await http.get<TlandsResponse>('lands')
-    LandStore.land$.next([res.data.lands!])
+    LandStore.land$.next([...res.data.lands!])
   }
 }

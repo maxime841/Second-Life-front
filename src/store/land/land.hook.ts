@@ -7,11 +7,11 @@ export const LandHook = {
    * hook for observable land$
    */
   useLand: () => {
-    const [lands, setLands] = useState<TLand[]>([])
+    const [lands, setLands] = useState([] as TLand)
 
     useEffect(() => {
       LandStore.land$.subscribe(
-        (value: never[]) => setLands(value)
+        (value: any) => setLands(value)
       )
     }, [])
     return lands
