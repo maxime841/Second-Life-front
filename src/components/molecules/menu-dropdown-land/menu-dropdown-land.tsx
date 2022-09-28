@@ -4,12 +4,11 @@ import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
 import { TMenuDropdownLand } from '@types-app/menu.type'
 import React from 'react'
-import { LandService } from '@store/land/land.service'
 import { TLand } from '@types-app/land.type'
 
 function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()
-  const lands = LandService.getAllLands()
+  const lands = Store.land.useLand()
 
   return (
     <nav className={`relative ${addClass}`}>
