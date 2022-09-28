@@ -5,15 +5,15 @@ import ClubPage from './public/club-page'
 import HomePage from './public/home-page'
 import LoginPage from './public/login-page'
 import OneLand from './public/land-page'
-import React, { useState } from 'react'
 import { TLand } from '@types-app/land.type'
+import { Store } from '@store/store'
 
 function App () {
-  const [lands] = useState<TLand[]>([])
-  const routeLands = lands.map(land =>
+  const lands = Store.land.useLand()
+  const routeLands = (lands as unknown as TLand[]).map(land =>
     <Route key={land.name} path={`/land/${land.id}`} element={<OneLand />} />
   )
-
+  console.log('routeLands:', routeLands)
   return (
     <Routes>
       <Route element={<TemplatePublic />}>
