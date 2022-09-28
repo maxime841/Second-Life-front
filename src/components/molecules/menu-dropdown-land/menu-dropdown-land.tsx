@@ -4,11 +4,11 @@ import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
 import { TMenuDropdownLand } from '@types-app/menu.type'
 import React from 'react'
-import { TLand } from '@types-app/land.type'
+import { ILand } from '@types-app/land.type'
 
 function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()
-  const lands = Store.land.useLand()
+  const lands = Store.land.useLands()
 
   return (
     <nav className={`relative ${addClass}`}>
@@ -26,7 +26,7 @@ function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
               p-2 bg-fond_color_button
               rounded-lg
             '>
-          {(lands as unknown as TLand[]).map((land: any) => (
+          {(lands as unknown as ILand[]).map((land: any) => (
             <li key={land.id}>
               <LinkText link={`/land/${land.id}`}>
                 <span>{land.name}</span>

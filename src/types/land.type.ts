@@ -1,7 +1,7 @@
 /**
  * type for all lands
  */
-export interface TLand {
+export interface ILand {
   id?: number
   name?: string
   owner?: string
@@ -13,6 +13,16 @@ export interface TLand {
   date_buy?: Date
 }
 
-export interface TlandsResponse {
-  lands?: TLand[]
+/**
+ * type for response one land
+ */
+export interface ILandResponse {
+  land: ILand
+}
+
+/**
+ * type for response all lands
+ */
+export interface ILandsResponse {
+  lands?: ILand[]
 }
