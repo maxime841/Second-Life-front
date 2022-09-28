@@ -4,6 +4,9 @@ import { AppStore } from './app/app.store'
 import { DarkModeHook } from './dark-mode/dark-mode.hook'
 import { DarkModeService } from './dark-mode/dark-mode.service'
 import { DarkModeStore } from './dark-mode/dark-mode.store'
+import { LandHook } from './land/land.hook'
+import { LandService } from './land/land.service'
+import { LandStore } from './land/land.store'
 import { MenuBurgerHook } from './menu-burger/menu-burger.hook'
 import { MenuBurgerService } from './menu-burger/menu-burger.service'
 import { MenuBurgerStore } from './menu-burger/menu-burger.store'
@@ -35,5 +38,10 @@ export const Store = {
     ...AppStore,
     ...AppService,
     ...AppHook
+  },
+  land: {
+    ...LandStore,
+    ...LandService,
+    ...LandHook
   }
 }
