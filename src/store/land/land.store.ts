@@ -6,5 +6,5 @@ export const LandStore = {
    * list of land via api
    * @type array de type TLand[]
    */
-  land$: new BehaviorSubject<TLand []>([])
+  land$: new BehaviorSubject<TLand[]>([]),
 }

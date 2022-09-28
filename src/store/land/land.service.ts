@@ -3,8 +3,11 @@ import { TlandsResponse } from '@types-app/land.type'
 import { LandStore } from './land.store'
 
 export const LandService = {
+  /**
+   * get all lands
+   */
   getAllLands: async () => {
     const res = await http.get<TlandsResponse>('lands')
     LandStore.land$.next([...res.data.lands!])
-  }
+  },
 }
