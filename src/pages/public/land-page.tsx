@@ -10,8 +10,29 @@ export function LandPage () {
       {
         land.id
           ? <section>
-            <h1>{land.id}</h1>
-            <p>{land.descriptions}</p>
+            <h1 className='text-center font-title text-3xl'>{land.name}</h1>
+            <div className='flex justify-center'>
+              <p className='font-text
+              text-justify
+              border-2
+              border-none
+              bg-fond-cards
+              w-fit
+              p-5
+              mt-8
+              mb-8
+              rounded-lg'>{land.description}</p>
+            </div>
+            <div className='card w-96 bg-fond-cards shadow-xl font-text'>
+              <figure><img src='https://placeimg.com/400/225/arch' alt='Shoes' /></figure>
+              <div className='card-body'>
+                <h2 className='card-title'>Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div className='card-actions justify-end'>
+                  <button className='btn bg-fond_color_button hover:bg-action-bg-hover'>Buy Now</button>
+                </div>
+              </div>
+            </div>
           </section>
           : <p>Loading data ...</p>
       }

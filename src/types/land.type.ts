@@ -6,7 +6,7 @@ export interface ILand {
   name?: string
   owner?: string
   presentation?: string
-  descriptions?: string
+  description?: string
   groups?: string
   prims?: number
   remaining_prims?: number
