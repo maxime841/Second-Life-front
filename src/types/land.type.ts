@@ -1,3 +1,5 @@
+import { IHouse } from './house.type'
+
 /**
  * type for all lands
  */
@@ -11,6 +13,7 @@ export interface ILand {
   prims?: number
   remaining_prims?: number
   date_buy?: Date
+  houses?: [IHouse]
 }
 
 /**

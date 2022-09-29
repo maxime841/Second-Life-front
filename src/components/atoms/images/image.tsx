@@ -1,5 +1,5 @@
 import React from 'react'
-import { TImage } from '@types-app/image.type'
+import { IImage } from '@types-app/image.type'
 
 /**
  * Image
@@ -9,7 +9,7 @@ import { TImage } from '@types-app/image.type'
  * @param height? number
  * @returns
  */
-function Image ({ src, alt, size }: TImage) {
+function Image ({ src, alt, size }: IImage) {
   return (
     <img
       src={src}

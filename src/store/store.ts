@@ -4,6 +4,9 @@ import { AppStore } from './app/app.store'
 import { DarkModeHook } from './dark-mode/dark-mode.hook'
 import { DarkModeService } from './dark-mode/dark-mode.service'
 import { DarkModeStore } from './dark-mode/dark-mode.store'
+import { HouseHook } from './houses/house.hook'
+import { HouseService } from './houses/house.service'
+import { HouseStore } from './houses/houses.store'
 import { LandHook } from './land/land.hook'
 import { LandService } from './land/land.service'
 import { LandStore } from './land/land.store'
@@ -43,5 +46,10 @@ export const Store = {
     ...LandStore,
     ...LandService,
     ...LandHook
+  },
+  house: {
+    ...HouseStore,
+    ...HouseService,
+    ...HouseHook
   }
 }
