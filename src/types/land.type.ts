@@ -9,7 +9,7 @@ export interface ILand {
   owner?: string
   presentation?: string
   description?: string
-  groups?: string
+  group?: string
   prims?: number
   remaining_prims?: number
   date_buy?: Date
