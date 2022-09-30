@@ -25,6 +25,7 @@ function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
               absolute top-16 left-4 w-64
               p-2 bg-fond_color_button
               rounded-lg
+              z-10
             '>
           {(lands as unknown as ILand[]).map((land: any) => (
             <li key={land.id}>
