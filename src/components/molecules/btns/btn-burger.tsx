@@ -29,7 +29,7 @@ function BtnIconMenuBurger ({ children, addClass }: TBtnMenuBurger) {
           ? (
             <ul className='flex-col items-center justify-around display sm:flex md:invisible absolute top-16 left-4 w-32
             p-2 bg-fond_color_button
-            rounded-lg'>
+            rounded-lg z-10'>
               {/* link home */}
               <li>
                 <LinkBtn link='/'>
