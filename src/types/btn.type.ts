@@ -45,4 +45,5 @@ export type TBtnMenuBurger = TComponentParent & {
 export type TBtnCard = TComponentParent & {
   addClass?: string
   onClick?: () => void
+  className?: string
 }

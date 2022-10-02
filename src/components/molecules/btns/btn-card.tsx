@@ -10,13 +10,22 @@ function BtnCard ({ addClass }: TBtnCard) {
   const [btnCard, setBtnCard] = useState(false)
 
   return (
-    <Btn
-      addClass={addClass}
-      click={() => setBtnCard(!btnCard)}
-      // className='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black'
-    >
-      En savoir plus
-    </Btn>
+    <div>
+      <Btn
+        click={() => setBtnCard(!btnCard)}
+        addClass='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black rounded-lg'
+      >
+        En savoir plus
+      </Btn>
+      {
+        btnCard ? (
+          <div className='w-96 h-96'>
+            {}
+          </div>
+
+        ) : null
+      }
+    </div>
   )
 }
 

@@ -1,10 +1,8 @@
 import { Store } from '@store/store'
 import BtnCard from '@molecules/btns/btn-card'
-import { useState } from 'react'
 
 function ClubPage () {
   const clubs = Store.club.useClubs()
-  const btnCard = useState()
 
   return (
     <section className='flex'>
@@ -19,17 +17,7 @@ function ClubPage () {
                 <div className='card-actions justify-end'>
                   <BtnCard>
                     En savoir plus
-                    <div>
-                      {
-                        btnCard ? (
-                          <div className='w-96 h-96'>
-                            {club.name}
-                          </div>
-                        ) : null
-                      }
-                    </div>
                   </BtnCard>
-                  {/* card club */}
                 </div>
               </div>
             </div>
