@@ -17,7 +17,6 @@ function BtnCard ({ addClass }: TBtnCard) {
     >
       En savoir plus
     </Btn>
-
   )
 }
 

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Store } from '@store/store'
 import BtnCard from '@molecules/btns/btn-card'
 
 function ClubPage () {
-  const open = Store.clubPanel.useClubPanel()
+  const btnCard = useState()
   const clubs = Store.club.useClubs()
 
   return (
@@ -22,7 +22,7 @@ function ClubPage () {
                   </BtnCard>
                   {/* card club */}
                   {
-                    open ? (
+                    btnCard ? (
                       <div className='w-96 h-96'>
                         {club.name}
                       </div>
