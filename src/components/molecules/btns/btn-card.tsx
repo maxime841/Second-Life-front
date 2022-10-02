@@ -12,8 +12,9 @@ function BtnCard ({ addClass }: TBtnCard) {
   return (
     <div>
       <Btn
+        addClass={addClass}
         click={() => setBtnCard(!btnCard)}
-        addClass='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black rounded-lg'
+        className='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black rounded-lg'
       >
         En savoir plus
       </Btn>
