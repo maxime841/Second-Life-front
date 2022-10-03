@@ -1,4 +1,5 @@
 import { TComponentParent } from './component-parent.type'
+import { IClub } from './club.type'
 
 /**
  * type for btn sample example
@@ -15,6 +16,7 @@ export type TBtn = TComponentParent & {
   bg?: string
   rounded?: string
   tabIndex?: string
+  club?: IClub
 }
 
 /**
@@ -40,10 +42,4 @@ export interface TBtnDarkMode {
 
 export type TBtnMenuBurger = TComponentParent & {
   addClass?: string
-}
-
-export type TBtnCard = TComponentParent & {
-  addClass?: string
-  onClick?: () => void
-  className?: string
 }

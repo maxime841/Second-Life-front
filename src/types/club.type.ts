@@ -5,6 +5,7 @@ export interface IClub {
   id?: number
   name?: string
   owner?: string
+  pictures?: string
 }
 
 /**

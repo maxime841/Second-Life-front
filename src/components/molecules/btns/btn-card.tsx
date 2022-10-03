@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import Btn from '@atoms/btns/btn-icon'
-import { TBtnCard } from '@types-app/btn.type'
+import { TBtn } from '@types-app/btn.type'
 
 /**
  * btn card for open panel
  * @returns
  */
-function BtnCard ({ addClass }: TBtnCard) {
+function BtnCard ({ club, addClass }: TBtn) {
   const [btnCard, setBtnCard] = useState(false)
+  console.log('club', club)
 
   return (
     <div>
       <Btn
         addClass={addClass}
         click={() => setBtnCard(!btnCard)}
-        addClass='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black rounded-lg'
       >
         En savoir plus
       </Btn>
       {
         btnCard ? (
-          <div className='w-96 h-96'>
-            {}
+          <div className='w-fit h-fit text-center'>
+            <h1>Nom: {club?.name}</h1>
+            <h2>Propriétaire: {club?.owner}</h2>
+            <p>presentation du club</p>
+            <article>flyers: {club?.pictures}</article>
           </div>
 
         ) : null

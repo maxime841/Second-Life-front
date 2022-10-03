@@ -5,5 +5,5 @@ export const ClubPanelStore = {
    * indication if user clicked on button card club
    * @type boolean
    */
-  clubPanelClicked$: new BehaviorSubject(false)
+  clubPanelClicked$: new BehaviorSubject(false),
 }
