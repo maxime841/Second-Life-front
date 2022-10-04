@@ -10,6 +10,8 @@ export interface IClub {
   favori?: string
   picurable_id?: number
   picturable_type?: string
+  created_at?: Date
+  updated_at?: Date
 }
 
 /**
