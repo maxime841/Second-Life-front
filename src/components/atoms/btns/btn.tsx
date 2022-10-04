@@ -10,7 +10,7 @@ import React from 'react'
  * @param textColor? string | undefined;
  * @returns
  */
-function Btn ({
+export function Btn ({
   children,
   addClass,
   click,
@@ -44,5 +44,3 @@ function Btn ({
     </button>
   )
 }
-
-export default Btn

@@ -1,30 +1,32 @@
 import React, { useState } from 'react'
-import Btn from '@atoms/btns/btn-icon'
-import { TBtn } from '@types-app/btn.type'
+import { IClub } from '@types-app/club.type'
+import { Btn } from '@atoms/btns/btn'
 
 /**
  * btn card for open panel
  * @returns
  */
-function BtnCard ({ club, addClass }: TBtn) {
-  const [btnCard, setBtnCard] = useState(false)
-  console.log('club', club)
+function BtnCard (props: IClub) {
+  const [openVolet, setOpenVolet] = useState(false)
+
+  function handlerClickBtn() {
+    setOpenVolet(!openVolet)
+  }
 
   return (
     <div>
       <Btn
-        addClass={addClass}
-        click={() => setBtnCard(!btnCard)}
+        click={handlerClickBtn}
       >
         En savoir plus
       </Btn>
       {
-        btnCard ? (
+        openVolet ? (
           <div className='w-fit h-fit text-center'>
-            <h1>Nom: {club?.name}</h1>
-            <h2>Propriétaire: {club?.owner}</h2>
+            <h1>Nom: {props.name}</h1>
+            <h2>Propriétaire: {props.owner}</h2>
             <p>presentation du club</p>
-            <article>flyers: {club?.pictures}</article>
+            <article>flyers: {props.pictures}</article>
           </div>
 
         ) : null

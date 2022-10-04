@@ -1,4 +1,4 @@
-import Btn from '@atoms/btns/btn'
+import { Btn } from '@atoms/btns/btn'
 import ChevronDownIcon from '@atoms/icons/chevron-down-icon'
 import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'

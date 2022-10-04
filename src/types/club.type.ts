@@ -6,6 +6,10 @@ export interface IClub {
   name?: string
   owner?: string
   pictures?: string
+  picture_url?: string
+  favori?: string
+  picurable_id?: number
+  picturable_type?: string
 }
 
 /**

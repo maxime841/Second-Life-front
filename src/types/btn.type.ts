@@ -43,3 +43,8 @@ export interface TBtnDarkMode {
 export type TBtnMenuBurger = TComponentParent & {
   addClass?: string
 }
+
+export interface TbtnCard {
+  club: IClub
+  addClass?: string
+}
