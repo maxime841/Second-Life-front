@@ -30,7 +30,6 @@ function SearchBar ({
         padding='py-2 pl-10 pr-4'
         placeholder='Veuillez saisir votre recherche'
         setValueInput={setValue}
-        // eslint-disable-next-line react/no-children-prop
         children={children}
       />
     </div>

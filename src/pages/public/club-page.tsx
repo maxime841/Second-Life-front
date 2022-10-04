@@ -1,9 +1,9 @@
-import React from 'react'
 import { Store } from '@store/store'
+import BtnCard from '@molecules/btns/btn-card'
+import React from 'react'
 
 function ClubPage () {
   const clubs = Store.club.useClubs()
-  console.log('mes clubs', clubs)
 
   return (
     <section className='flex'>
@@ -16,7 +16,7 @@ function ClubPage () {
                 <h2 className='card-title font-title'>club: {club.name}</h2>
                 <p className='font-text'>Propriétaire: {club.owner}</p>
                 <div className='card-actions justify-end'>
-                  <button className='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black'>En savoir plus</button>
+                  <BtnCard {...club} />
                 </div>
               </div>
             </div>
@@ -26,5 +26,4 @@ function ClubPage () {
     </section>
   )
 }
-
 export default ClubPage

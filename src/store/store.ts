@@ -1,6 +1,9 @@
 import { AppHook } from './app/app.hook'
 import { AppService } from './app/app.service'
 import { AppStore } from './app/app.store'
+import { ClubPanelHook } from './club-panel/club-panel.hook'
+import { ClubPanelService } from './club-panel/club-panel.service'
+import { ClubPanelStore } from './club-panel/club-panel.store'
 import { ClubHook } from './club/club.hook'
 import { ClubService } from './club/club.service'
 import { ClubStore } from './club/club.store'
@@ -20,25 +23,28 @@ import { OutSideClickHook } from './outside-cLick/outside-click.hook'
 import { TokenHook } from './token/token.hook'
 import { TokenService } from './token/token.service'
 import { TokenStore } from './token/token.store'
+import { userHook } from './user/user.hook'
+import { userService } from './user/user.service'
+import { userStore } from './user/user.store'
 
 export const Store = {
   menuBurger: {
     ...MenuBurgerStore,
     ...MenuBurgerService,
-    ...MenuBurgerHook
+    ...MenuBurgerHook,
   },
   darkmode: {
     ...DarkModeStore,
     ...DarkModeService,
-    ...DarkModeHook
+    ...DarkModeHook,
   },
   token: {
     ...TokenStore,
     ...TokenService,
-    ...TokenHook
+    ...TokenHook,
   },
   outsideClick: {
-    ...OutSideClickHook
+    ...OutSideClickHook,
   },
   app: {
     ...AppStore,
@@ -59,5 +65,15 @@ export const Store = {
     ...ClubStore,
     ...ClubService,
     ...ClubHook
-  }
+  },
+  clubPanel: {
+    ...ClubPanelStore,
+    ...ClubPanelService,
+    ...ClubPanelHook
+  },
+  user: {
+    ...userStore,
+    ...userService,
+    ...userHook,
+  },
 }

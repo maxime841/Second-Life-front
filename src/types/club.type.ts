@@ -5,6 +5,13 @@ export interface IClub {
   id?: number
   name?: string
   owner?: string
+  pictures?: string
+  picture_url?: string
+  favori?: string
+  picurable_id?: number
+  picturable_type?: string
+  created_at?: Date
+  updated_at?: Date
 }
 
 /**

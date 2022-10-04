@@ -1,9 +1,8 @@
-import { TComponentParent } from './component-parent.type'
-
 /**
  * type for input sample
  */
-export type TInput = TComponentParent & {
+export type TInput = {
+  children?: JSX.Element | JSX.Element[] | string | string[]
   id?: string
   name?: string
   type?: string
@@ -22,8 +21,8 @@ export type TInput = TComponentParent & {
 }
 
 /**
-   * type for input full
-   */
+ * type for input full
+ */
 export type TInputFull = TInput & {
   activeReset?: boolean
   eye?: boolean

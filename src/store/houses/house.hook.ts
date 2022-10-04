@@ -5,23 +5,6 @@ import { HouseStore } from './houses.store'
 
 export const HouseHook = {
   /**
-   * hook for observable houses$
-   */
-  /* useHouses: () => {
-    const [houses, setHouses] = useState<IHouse[]>([])
-
-    useEffect(() => {
-      async function getHouses() {
-        await HouseService.getAllHouses()
-      }
-      HouseStore.houses$.subscribe(value => setHouses(value))
-
-      getHouses()
-    }, [])
-
-    return houses
-  }, */
-  /**
    * hook for observable houseCardClicked$
    * @param id: string
    */
