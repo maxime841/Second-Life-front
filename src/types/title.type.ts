@@ -6,4 +6,5 @@ import { TComponentParent } from './component-parent.type'
 export type TTitle = TComponentParent & {
   textAlign?: string
   fontFamily?: string
+  addClass?: string
 }

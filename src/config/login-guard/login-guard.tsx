@@ -6,11 +6,11 @@ import { Outlet, Navigate } from 'react-router-dom'
  * guard for route of backoffice
  * @returns
  */
-export function AuthGuard() {
+export function LoginGuard() {
   const token = Store.token.useToken()
 
-  return !localStorage.getItem('nekto') && token === '' ? (
-    <Navigate to='/login' replace />
+  return localStorage.getItem('nekto') ? (
+    <Navigate to='/dashboard' replace />
   ) : (
     <Outlet />
   )

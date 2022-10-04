@@ -3,13 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'react-app',
-    'react-app/jest',
-    'standard',
-    'standard-typescript',
-    'plugin:import/typescript',
-  ],
+  extends: ['plugin:import/typescript', 'standard'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
@@ -44,5 +38,10 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': 0,
     '@typescript-eslint/indent': 0,
     '@typescript-eslint/prefer-nullish-coalescing': 0,
+    'no-unused-vars': 0,
+    indent: 0,
+    'multiline-ternary': 0,
+    'no-undef': 0,
+    'space-before-function-paren': 0,
   },
 }
