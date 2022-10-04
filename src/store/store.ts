@@ -1,9 +1,21 @@
 import { AppHook } from './app/app.hook'
 import { AppService } from './app/app.service'
 import { AppStore } from './app/app.store'
+import { ClubPanelHook } from './club-panel/club-panel.hook'
+import { ClubPanelService } from './club-panel/club-panel.service'
+import { ClubPanelStore } from './club-panel/club-panel.store'
+import { ClubHook } from './club/club.hook'
+import { ClubService } from './club/club.service'
+import { ClubStore } from './club/club.store'
 import { DarkModeHook } from './dark-mode/dark-mode.hook'
 import { DarkModeService } from './dark-mode/dark-mode.service'
 import { DarkModeStore } from './dark-mode/dark-mode.store'
+import { HouseHook } from './houses/house.hook'
+import { HouseService } from './houses/house.service'
+import { HouseStore } from './houses/houses.store'
+import { LandHook } from './land/land.hook'
+import { LandService } from './land/land.service'
+import { LandStore } from './land/land.store'
 import { MenuBurgerHook } from './menu-burger/menu-burger.hook'
 import { MenuBurgerService } from './menu-burger/menu-burger.service'
 import { MenuBurgerStore } from './menu-burger/menu-burger.store'
@@ -37,7 +49,27 @@ export const Store = {
   app: {
     ...AppStore,
     ...AppService,
-    ...AppHook,
+    ...AppHook
+  },
+  land: {
+    ...LandStore,
+    ...LandService,
+    ...LandHook
+  },
+  house: {
+    ...HouseStore,
+    ...HouseService,
+    ...HouseHook
+  },
+  club: {
+    ...ClubStore,
+    ...ClubService,
+    ...ClubHook
+  },
+  clubPanel: {
+    ...ClubPanelStore,
+    ...ClubPanelService,
+    ...ClubPanelHook
   },
   user: {
     ...userStore,

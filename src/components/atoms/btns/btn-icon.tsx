@@ -10,7 +10,8 @@ import { TBtn } from '@types-app/btn.type'
  * @param textColor? string | undefined;
  * @returns
  */
-export function BtnIcon({
+
+export function BtnIcon ({
   children,
   addClass,
   click,

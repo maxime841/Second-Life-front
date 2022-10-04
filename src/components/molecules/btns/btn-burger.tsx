@@ -1,6 +1,7 @@
 import React from 'react'
 import { Store } from '@store/store'
-import Btn from '@atoms/btns/btn'
+
+import { Btn } from '@atoms/btns/btn'
 import { TBtnMenuBurger } from '@types-app/btn.type'
 import MenuBurgerIcon from '@atoms/icons/burger-icon'
 import LinkBtn from '@atoms/links/link-btn'
@@ -28,14 +29,14 @@ function BtnIconMenuBurger({ children, addClass }: TBtnMenuBurger) {
         <ul
           className='flex-col items-center justify-around display sm:flex md:invisible absolute top-16 left-4 w-32
             p-2 bg-fond_color_button
-            rounded-lg'>
-          {/* link home */}
-          <li>
-            <LinkBtn link='/'>
-              <HomeIcon size='w-5 h-5' />
-              <span className='ml-2'>Home</span>
-            </LinkBtn>
-          </li>
+            rounded-lg z-10'>
+              {/* link home */}
+              <li>
+                <LinkBtn link='/'>
+                  <HomeIcon size='w-5 h-5' />
+                  <span className='ml-2'>Home</span>
+                </LinkBtn>
+              </li>
 
           {/* dropdown land */}
           <div className='mt-2'>
