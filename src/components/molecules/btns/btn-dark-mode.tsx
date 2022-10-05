@@ -9,19 +9,18 @@ import { TBtnDarkMode } from '@types-app/btn.type'
  * btn dark mode with change icon moon or sun
  * @returns
  */
-function BtnIconDarkMode ({ addClass }: TBtnDarkMode) {
+function BtnIconDarkMode({ addClass }: TBtnDarkMode) {
   const darkModeActivate = Store.darkmode.useDarkModeActivate()
 
   return (
     <BtnIcon
       addClass={addClass}
-      click={() => Store.darkmode.switchDarkMode(darkModeActivate)}
-    >
-      {
-        darkModeActivate
-          ? <SunIcon color='text-black' />
-          : <MoonIcon color='text-black' />
-      }
+      click={() => Store.darkmode.switchDarkMode(darkModeActivate)}>
+      {darkModeActivate ? (
+        <SunIcon color='text-black' />
+      ) : (
+        <MoonIcon color='text-black' />
+      )}
     </BtnIcon>
   )
 }

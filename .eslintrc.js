@@ -40,5 +40,9 @@ module.exports = {
     '@typescript-eslint/no-invalid-void-type': 0,
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/space-before-function-paren': 0,
+    '@typescript-eslint/consistent-type-assertions': 0,
+    '@typescript-eslint/consistent-type-definitions': 0,
+    '@typescript-eslint/indent': 0,
+    '@typescript-eslint/prefer-nullish-coalescing': 0,
   },
 }

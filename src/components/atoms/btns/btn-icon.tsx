@@ -10,6 +10,7 @@ import { TBtn } from '@types-app/btn.type'
  * @param textColor? string | undefined;
  * @returns
  */
+
 export function BtnIcon ({
   children,
   addClass,
@@ -17,7 +18,7 @@ export function BtnIcon ({
   submit,
   textColor,
   padding,
-  hoverBg
+  hoverBg,
 }: TBtn) {
   return (
     <button
@@ -34,8 +35,7 @@ export function BtnIcon ({
       dark:hover:bg-action-bg-dark-hover
       h-fit
       w-fit
-      `}
-    >
+      `}>
       {children}
     </button>
   )
