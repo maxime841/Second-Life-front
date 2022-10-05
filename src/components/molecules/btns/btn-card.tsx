@@ -6,7 +6,7 @@ import { Btn } from '@atoms/btns/btn'
  * btn card for open panel
  * @returns
  */
-function BtnCard (props: IClub) {
+function BtnCard ({ club }: IClub) {
   const [openVolet, setOpenVolet] = useState(false)
 
   function handlerClickBtn() {
@@ -23,10 +23,10 @@ function BtnCard (props: IClub) {
       {
         openVolet ? (
           <div className='w-fit h-fit text-center'>
-            <h1>Nom: {props.name}</h1>
-            <h2>Propriétaire: {props.owner}</h2>
+            <h1>Nom: {club?.name}</h1>
+            <h2>Propriétaire: {club?.owner}</h2>
             <p>presentation du club</p>
-            <article>flyers: {props.pictures}</article>
+            <article>flyers: {}</article>
           </div>
 
         ) : null
