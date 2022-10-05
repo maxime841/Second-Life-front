@@ -22,7 +22,7 @@ function BtnCard ({ club }: IClub) {
       </Btn>
       {
         openVolet ? (
-          <div className='w-fit h-fit text-center'>
+          <div className='w-fit h-fit'>
             <h1>Nom: {club?.name}</h1>
             <h2>Propriétaire: {club?.owner}</h2>
             <p>presentation du club</p>

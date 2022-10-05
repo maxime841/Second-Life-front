@@ -1,4 +1,4 @@
-import Btn from '@atoms/btns/btn'
+import { Btn } from '@atoms/btns/btn'
 import { ErrorText } from '@atoms/errors/error-text'
 import { LockIcon } from '@atoms/icons/lock-icon'
 import { UserIcon } from '@atoms/icons/user-icon'
