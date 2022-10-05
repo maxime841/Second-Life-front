@@ -22,12 +22,25 @@ function BtnCard ({ club }: IClub) {
       </Btn>
       {
         openVolet ? (
-          <div className='w-fit h-fit'>
-            <h1>Nom: {club?.name}</h1>
-            <h2>Propriétaire: {club?.owner}</h2>
-            <p>presentation du club</p>
-            <article>flyers: {}</article>
-          </div>
+          <article>
+            <p className='font-text text-justify border-2 border-none bg-fond-cards w-fit p-5 mt-8 mb-8 rounded-lg'>
+              {club?.presentation}</p>
+            <div className='carousel w-full'>
+              {
+                club?.pictures?.map(party => {
+                    return (
+                      <div key={party.id} id={`slide ${party?.id}`} className='carousel-item relative w-full'>
+                        <img src={party.picture_url} className='w-full' alt='presentation dy flyers du club' /><div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
+                          <a href={`slide ${party.id ? -1 : Number}`} className='btn btn-circle'>❮</a>
+                          <a href={`slide ${party.id ? +1 : Number}`} className='btn btn-circle'>❯</a>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+
+            </div>
+          </article>
 
         ) : null
       }

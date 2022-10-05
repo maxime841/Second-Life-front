@@ -5,7 +5,8 @@ export interface IClub {
   id?: number
   name?: string
   owner?: string
-  picture?: {}
+  presentation?: string
+  pictures?: IPictures[]
   club?: IClub
   parties?: IParties
 }
@@ -14,16 +15,18 @@ export interface IClub {
  * type for all parties of clubs
  */
  export interface IParties {
+  id?: number
   name: string
   owner: string
   date_party?: Date
-  pictures: IPictures
+  pictures: IPictures[]
 }
 
 /**
  * type for all picture of clubs
  */
   export interface IPictures {
+    id?: number
     name: string
     picture_url: string
     favori?: boolean
