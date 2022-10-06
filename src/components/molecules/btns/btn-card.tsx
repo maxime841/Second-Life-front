@@ -8,9 +8,20 @@ import { Btn } from '@atoms/btns/btn'
  */
 function BtnCard ({ club }: IClub) {
   const [openVolet, setOpenVolet] = useState(false)
+  let [slide, setSlide] = useState(0)
 
   function handlerClickBtn() {
     setOpenVolet(!openVolet)
+  }
+
+  function handleLeftClick() {
+    setSlide(slide = slide - 1)
+    console.log('mon setSlide left', setSlide, slide)
+  }
+
+  function handleRightClick() {
+    setSlide(slide = slide + 1)
+    console.log('mon setSlide right', setSlide, slide)
   }
 
   return (
@@ -27,12 +38,12 @@ function BtnCard ({ club }: IClub) {
               {club?.presentation}</p>
             <div className='carousel w-full'>
               {
-                club?.pictures?.map(party => {
+                club?.parties?.map(party => {
                     return (
-                      <div key={party.id} id={`slide ${party?.id}`} className='carousel-item relative w-full'>
-                        <img src={party.picture_url} className='w-full' alt='presentation dy flyers du club' /><div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-                          <a href={`slide ${party.id ? -1 : Number}`} className='btn btn-circle'>❮</a>
-                          <a href={`slide ${party.id ? +1 : Number}`} className='btn btn-circle'>❯</a>
+                      <div key={party.id} id={`slide ${party.id}`} className='carousel-item relative w-full'>
+                        <img src={party.picture_favoris?.picture_url} className='w-full' alt='presentation du flyers du club' /><div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
+                          <button onClick={handleLeftClick} className='btn btn-circle'>❮</button>
+                          <button onClick={handleRightClick} className='btn btn-circle'>❯</button>
                         </div>
                       </div>
                     )
