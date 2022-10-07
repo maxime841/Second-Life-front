@@ -96,7 +96,9 @@ export const userService = {
       )
       if (res.data.send_email) {
         // ! toastify
+        return true
       }
+      return false
     } catch (error) {
       AppService.errorMessage(
         userStore.forgotPasswordError$,
@@ -104,6 +106,7 @@ export const userService = {
         Eerror.FORGOT_PASSWORD,
       )
       userStore.forgotPasswordLoading$.next(false)
+      return false
     }
   },
 
@@ -119,7 +122,9 @@ export const userService = {
       )
       if (res.data.update_password) {
         // ! toastify
+        return true
       }
+      return false
     } catch (error) {
       AppService.errorMessage(
         userStore.resetPasswordError$,
@@ -127,6 +132,7 @@ export const userService = {
         Eerror.FORGOT_PASSWORD,
       )
       userStore.resetPasswordLoading$.next(false)
+      return false
     }
   },
 
