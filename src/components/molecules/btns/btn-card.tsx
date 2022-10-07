@@ -7,35 +7,10 @@ import { TbtnCard } from '@types-app/btn.type'
  * @returns
  */
 function BtnCard({ club }: TbtnCard) {
-  const pictures = club?.parties?.map(party => party?.pictures?.map(picture => picture.picture_url))
-  console.log('mes images', pictures)
-
-  const mod = (n: number, m: number) => {
-    const result = n % m
-
-    // Return a positive value
-    return result >= 0 ? result : result + m
-  }
-
   const [openVolet, setOpenVolet] = useState(false)
-  const [slide, setSlide] = useState(0)
-
-  useEffect(() => {
-      setSlide((slide % pictures?.length!))
-  }, [slide])
 
   function handlerClickBtn() {
     setOpenVolet(!openVolet)
-  }
-
-  function handleLeftClick() {
-    setSlide(mod(slide - 1, pictures?.length!))
-    console.log('setSlide', setSlide, 'slide', slide)
-  }
-
-  function handleRightClick() {
-    setSlide(mod(slide + 1, pictures?.length!))
-    console.log('setSlide', setSlide, 'slide', slide)
   }
 
   return (
@@ -43,39 +18,61 @@ function BtnCard({ club }: TbtnCard) {
       <Btn click={handlerClickBtn}>En savoir plus</Btn>
       {openVolet ? (
         <article>
-          <p className='font-text text-justify border-2 border-none bg-fond-cards w-fit p-5 mt-8 mb-8 rounded-lg'>
+          {/* pres club */}
+          <h3 className='mt-4 font-bold'>Présentation du club :</h3>
+          <p className='font-text text-justify border-2 border-none bg-fond-cards w-fit p-5 rounded-lg'>
             {club?.presentation}
           </p>
-                <div className='carousel w-full'>
-                  {
-                    club?.parties?.map(party => party?.pictures?.map(picture => {
-                      return (
-                       <div
-                        key={picture.id}
-                        id={`slide ${picture.id}`}
-                        className='carousel-item relative w-full'>
-                          <img
-                            src={picture.picture_url}
-                            className='w-full'
-                            alt='presentation du flyers du club'
-                          />
-                          <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-                            <button
-                              onClick={handleLeftClick}
-                              className='btn btn-circle'>
-                            ❮
-                            </button>
-                            <button
-                              onClick={handleRightClick}
-                              className='btn btn-circle'>
-                            ❯
-                            </button>
-                          </div>
-                      </div>
-                      )
-                    }))
-                  }
+
+          {/* party of club */}
+          {club.parties?.map(party => (
+            <div key={party.id} className='mb-6'>
+              {/* title */}
+              <h3>
+                <span className='font-bold'>Party : </span>
+                {party.name}
+              </h3>
+              <p>
+                <span className='font-bold'>Propriètaire : </span> {party.owner}
+              </p>
+              <p>
+                <span className='font-bold'>Date : </span>
+                {`${new Date(`${party.date_party}`).toLocaleDateString()}`}
+              </p>
+              <h3 className='font-bold'>Images :</h3>
+              <div className='carousel w-full'>
+                {party.pictures?.map((picture, index) => (
+                  <div
+                    key={picture.id}
+                    id={`${index}`}
+                    className='carousel-item relative w-full'>
+                    <img
+                      src='https://placeimg.com/800/200/arch'
+                      className='w-full h-full'
+                    />
+                    <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
+                      <a
+                        href={`#${
+                          index === 0 ? party.pictures?.length! - 1 : index - 1
+                        }`}
+                        className='btn btn-circle'>
+                        ❮
+                      </a>
+                      <a
+                        href={`#${
+                          index === party.pictures?.length! - 1
+                            ? index + 1 - party.pictures?.length!
+                            : index + 1
+                        }`}
+                        className='btn btn-circle'>
+                        ❯
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+          ))}
         </article>
       ) : null}
     </div>
