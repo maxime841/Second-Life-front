@@ -1,6 +1,5 @@
 import React from 'react'
 import { Store } from '@store/store'
-
 import { Btn } from '@atoms/btns/btn'
 import { TBtnMenuBurger } from '@types-app/btn.type'
 import MenuBurgerIcon from '@atoms/icons/burger-icon'

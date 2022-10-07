@@ -91,7 +91,7 @@ function InputFull({
           hoverBg='hover:bg-transparent dark:hover:bg-transparent'
           click={changeTypeInput}>
           {typeInput === 'text' ? (
-            <EyeOpenIcon size='w-5 h-5' />
+            <EyeOpenIcon color='text-black' size='w-5 h-5' />
           ) : (
             <EyeCloseIcon size='w-5 h-5' />
           )}

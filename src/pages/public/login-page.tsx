@@ -1,12 +1,13 @@
+import Title from '@atoms/title/title'
 import { FormLogin } from '@molecules/forms/form-login'
+import SectionLogin from '@organisms/section-login/section-login'
 import React from 'react'
 
 function LoginPage() {
   return (
     <div>
-      <div className='mx-auto bg-fond2_claire dark:bg-fond2_dark w-full sm:max-w-md px-4 py-5 sm:px-8 md:px-12 md:py-8'>
-        <FormLogin />
-      </div>
+      <Title addClass='mb-8 font-bold text-3xl'>Connexion</Title>
+      <SectionLogin />
     </div>
   )
 }

@@ -32,7 +32,7 @@ export const HttpInterceptor = {
       response => {
         if (response.status === 401) {
           Store.token.removeTokenAndStorage()
-          // Store.user.removeUserCurrent();
+          Store.user.removeUserCurrent()
         }
         console.log('response Interceptor', response)
         return response

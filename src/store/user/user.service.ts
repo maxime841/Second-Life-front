@@ -67,7 +67,7 @@ export const userService = {
       const res = await http.delete<IuserLogout>(`${Eroute.AUTH_LOGOUT_DELETE}`)
 
       // if disconnect remove token remove usercurrent
-      if (res.data.authenticated) {
+      if (!res.data.authenticated) {
         TokenService.removeTokenAndStorage()
         userService.removeUserCurrent()
       }

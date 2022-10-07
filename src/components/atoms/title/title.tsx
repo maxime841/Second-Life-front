@@ -7,13 +7,13 @@ import React from 'react'
  * @returns
  */
 
-function Title ({ children }: TTitle) {
+function Title({ children, addClass }: TTitle) {
   return (
     <h1
       className={`
       text-center
-      `}
-    >
+      ${addClass}
+      `}>
       {children}
     </h1>
   )
