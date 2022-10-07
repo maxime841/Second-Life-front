@@ -18,3 +18,13 @@ export interface Iuser {
 export interface IuserLogout {
   authenticated?: boolean
 }
+
+/**
+ * type for object for restPassword
+ */
+export type TresetPassword = {
+  email: string
+  password_confirmation: string
+  password: string
+  token?: string
+}

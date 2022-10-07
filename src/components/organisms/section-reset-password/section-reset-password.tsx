@@ -5,7 +5,7 @@ import React from 'react'
 
 export function SectionResetPassword() {
   return (
-    <ContainerPrimary model={EmodelContainer.l}>
+    <ContainerPrimary addClass='mx-auto' model={EmodelContainer.l}>
       <FormResetPassword />
     </ContainerPrimary>
   )

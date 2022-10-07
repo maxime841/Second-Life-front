@@ -24,7 +24,7 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPasswordPage />} />
         </Route>
         <Route path='/club' element={<ClubPage />} />
-        <Route path='/reset-password/:token' element={<ResetPasswordPage />} />
+        <Route path='/reset-password' element={<ResetPasswordPage />} />
       </Route>
       <Route element={<AuthGuard />}>
         <Route element={<TemplatePrivate />}>

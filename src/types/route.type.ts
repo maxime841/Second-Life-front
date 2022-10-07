@@ -9,4 +9,5 @@ export enum Eroute {
 
   // forgot password
   FORGOT_PASSWORD = 'forgot-password',
+  RESET_PASSWORD = 'reset-password',
 }
