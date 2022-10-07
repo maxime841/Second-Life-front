@@ -54,7 +54,11 @@ export function FormLogin() {
       />
 
       {/* link forgot password */}
-      <LinkText link='/forgot-password'>Mot de passe oublié ?</LinkText>
+      <li className='flex justify-end'>
+        <LinkText addClass='text-xs' link='/forgot-password'>
+          Mot de passe oublié ?
+        </LinkText>
+      </li>
 
       {/* error text */}
       <ErrorText position='text-center sm:text-left'>{error}</ErrorText>
