@@ -6,7 +6,6 @@ const classBasic = `
 flex items-center
 py-2 px-2 pl-4
 rounded-full
-text-lg
 md:w-fit
 md:bg-transparent
 md:hover:bg-transparent
@@ -34,23 +33,16 @@ md:bg-transparent
  * @param addClass? string | undefined;
  * @returns
  */
-function LinkText ({
-  children,
-  link,
-  click,
-  addClass
-}: TLink) {
+function LinkText({ children, link, click, addClass }: TLink) {
   return (
     <NavLink
       to={link}
       onClick={click}
-      className={
-        ({ isActive }) => (
-          isActive
-            ? `${addClass} ${classBasic} ${classActive}`
-            : `${addClass} ${classBasic} ${classNoActive}`)
-      }
-    >
+      className={({ isActive }) =>
+        isActive
+          ? `${addClass} ${classBasic} ${classActive}`
+          : `${addClass} ${classBasic} ${classNoActive}`
+      }>
       {children}
     </NavLink>
   )

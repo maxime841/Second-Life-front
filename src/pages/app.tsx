@@ -11,6 +11,7 @@ import { DashboardPage } from './private/dashboard-page'
 import { LoginGuard } from '@config-app/login-guard/login-guard'
 import { AuthGuard } from '@config-app/auth-guard/auth-guard'
 import { ForgotPasswordPage } from './public/forgot-password-page'
+import { ResetPasswordPage } from './public/reset-password-page'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPasswordPage />} />
         </Route>
         <Route path='/club' element={<ClubPage />} />
+        <Route path='/reset-password' element={<ResetPasswordPage />} />
       </Route>
       <Route element={<AuthGuard />}>
         <Route element={<TemplatePrivate />}>
