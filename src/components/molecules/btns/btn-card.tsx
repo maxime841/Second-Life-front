@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Btn } from '@atoms/btns/btn'
 import { TbtnCard } from '@types-app/btn.type'
+import { IPicture } from '@types-app/models/picture.type'
 
 /**
  * btn card for open panel
@@ -41,7 +42,7 @@ function BtnCard({ club }: TbtnCard) {
                   id={`slide ${party.id}`}
                   className='carousel-item relative w-full'>
                   {
-                    club?.parties?.pictures?.map((picture => {
+                    club?.parties?.map(party => party?.pictures?.map(picture => {
                       return (
                         <img
                           key={picture.id}
@@ -50,7 +51,7 @@ function BtnCard({ club }: TbtnCard) {
                           alt='presentation du flyers du club'
                         />
                       )
-                    })
+                    }))
                   }
 
                   <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
