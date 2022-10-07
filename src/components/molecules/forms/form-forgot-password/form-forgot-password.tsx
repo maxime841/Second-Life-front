@@ -12,6 +12,7 @@ export function FormForgotPassword() {
     Store.user.activateForgotPasswordLoadding()
     e.preventDefault()
     await Store.user.sendForgotPassword(valueEmail)
+    setValueEmail('')
     Store.user.disabledForgotPasswordLoadding()
   }
 
