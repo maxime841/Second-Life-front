@@ -79,4 +79,35 @@ export const userService = {
       userStore.logoutLoading$.next(false)
     }
   },
+
+  /**
+   * send email for forgot password
+   * @param email string
+   */
+  sendForgotPassword: async (email: string) => {
+    try {
+      await http.post(Eroute.FORGOT_PASSWORD, { email })
+    } catch (error) {
+      AppService.errorMessage(
+        userStore.forgotPasswordError$,
+        error,
+        Eerror.FORGOT_PASSWORD,
+      )
+      userStore.forgotPasswordLoading$.next(false)
+    }
+  },
+
+  /**
+   * active loader for forgot password
+   */
+  activateForgotPasswordLoadding: () => {
+    userStore.forgotPasswordLoading$.next(true)
+  },
+
+  /**
+   * disable loader for forgot password
+   */
+  disabledForgotPasswordLoadding: () => {
+    userStore.forgotPasswordLoading$.next(true)
+  },
 }

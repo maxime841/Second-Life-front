@@ -1,13 +1,22 @@
 import { Btn } from '@atoms/btns/btn'
-import { UserIcon } from '@atoms/icons/user-icon'
+import { ErrorText } from '@atoms/errors/error-text'
 import InputFull from '@molecules/inputs/input-full'
+import { Store } from '@store/store'
 import React, { useState } from 'react'
 
 export function FormForgotPassword() {
   const [valueEmail, setValueEmail] = useState('')
+  const { error } = Store.user.useForgotPasswordError()
+
+  const handlerSubForgotPassword = async (e: React.FormEvent) => {
+    Store.user.activateForgotPasswordLoadding()
+    e.preventDefault()
+    await Store.user.sendForgotPassword(valueEmail)
+    Store.user.disabledForgotPasswordLoadding()
+  }
 
   return (
-    <form>
+    <form onSubmit={handlerSubForgotPassword}>
       {/* input email */}
       <InputFull
         placeholder='Veuillez renseigner une adresse e-mail'
@@ -18,9 +27,12 @@ export function FormForgotPassword() {
         required
       />
 
+      {/* error text */}
+      <ErrorText position='text-center sm:text-left'>{error}</ErrorText>
+
       {/* btn form */}
       <div className='flex justify-end mt-4'>
-        <Btn submit>Modifier mot de passe</Btn>
+        <Btn submit>Réinitialiser</Btn>
       </div>
     </form>
   )
