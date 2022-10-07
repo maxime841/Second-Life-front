@@ -1,36 +1,76 @@
 import React, { useState } from 'react'
-import { IClub } from '@types-app/club.type'
 import { Btn } from '@atoms/btns/btn'
+import { TbtnCard } from '@types-app/btn.type'
 
 /**
  * btn card for open panel
  * @returns
  */
-function BtnCard (props: IClub) {
+function BtnCard({ club }: TbtnCard) {
   const [openVolet, setOpenVolet] = useState(false)
+  let [slide, setSlide] = useState(0)
+  console.log('mes photos', club?.parties)
 
   function handlerClickBtn() {
     setOpenVolet(!openVolet)
   }
 
+  function handleLeftClick() {
+    setSlide((slide = slide - 1))
+    console.log('mon setSlide left', setSlide, slide)
+  }
+
+  function handleRightClick() {
+    setSlide((slide = slide + 1))
+    console.log('mon setSlide right', setSlide, slide)
+  }
+
   return (
     <div>
-      <Btn
-        click={handlerClickBtn}
-      >
-        En savoir plus
-      </Btn>
-      {
-        openVolet ? (
-          <div className='w-fit h-fit text-center'>
-            <h1>Nom: {props.name}</h1>
-            <h2>Propriétaire: {props.owner}</h2>
-            <p>presentation du club</p>
-            <article>flyers: {props.pictures}</article>
-          </div>
+      <Btn click={handlerClickBtn}>En savoir plus</Btn>
+      {openVolet ? (
+        <article>
+          <p className='font-text text-justify border-2 border-none bg-fond-cards w-fit p-5 mt-8 mb-8 rounded-lg'>
+            {club?.presentation}
+          </p>
+          <div className='carousel w-full'>
+            {club?.parties?.map(party => {
+              return (
+                <div
+                  key={party.id}
+                  id={`slide ${party.id}`}
+                  className='carousel-item relative w-full'>
+                  {
+                    club?.parties?.pictures?.map((picture => {
+                      return (
+                        <img
+                          key={picture.id}
+                          src={picture.picture_url}
+                          className='w-full'
+                          alt='presentation du flyers du club'
+                        />
+                      )
+                    })
+                  }
 
-        ) : null
-      }
+                  <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
+                    <button
+                      onClick={handleLeftClick}
+                      className='btn btn-circle'>
+                      ❮
+                    </button>
+                    <button
+                      onClick={handleRightClick}
+                      className='btn btn-circle'>
+                      ❯
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </article>
+      ) : null}
     </div>
   )
 }

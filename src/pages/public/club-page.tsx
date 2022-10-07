@@ -16,7 +16,7 @@ function ClubPage () {
                 <h2 className='card-title font-title'>club: {club.name}</h2>
                 <p className='font-text'>Propriétaire: {club.owner}</p>
                 <div className='card-actions justify-end'>
-                  <BtnCard {...club} />
+                  <BtnCard club={club} />
                 </div>
               </div>
             </div>
