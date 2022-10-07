@@ -2,6 +2,7 @@ import { Btn } from '@atoms/btns/btn'
 import { ErrorText } from '@atoms/errors/error-text'
 import { LockIcon } from '@atoms/icons/lock-icon'
 import { UserIcon } from '@atoms/icons/user-icon'
+import LinkText from '@atoms/links/link-text'
 import InputFull from '@molecules/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
@@ -53,6 +54,7 @@ export function FormLogin() {
       />
 
       {/* link forgot password */}
+      <LinkText link='/forgot-password'>Mot de passe oublié ?</LinkText>
 
       {/* error text */}
       <ErrorText position='text-center sm:text-left'>{error}</ErrorText>
