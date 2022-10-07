@@ -9,6 +9,7 @@ import { TbtnCard } from '@types-app/btn.type'
 function BtnCard({ club }: TbtnCard) {
   const [openVolet, setOpenVolet] = useState(false)
   let [slide, setSlide] = useState(0)
+  console.log('mes photos', club?.parties)
 
   function handlerClickBtn() {
     setOpenVolet(!openVolet)
@@ -39,11 +40,19 @@ function BtnCard({ club }: TbtnCard) {
                   key={party.id}
                   id={`slide ${party.id}`}
                   className='carousel-item relative w-full'>
-                  <img
-                    src={party.picture_favoris?.picture_url}
-                    className='w-full'
-                    alt='presentation du flyers du club'
-                  />
+                  {
+                    club?.parties?.pictures?.map((picture => {
+                      return (
+                        <img
+                          key={picture.id}
+                          src={picture.picture_url}
+                          className='w-full'
+                          alt='presentation du flyers du club'
+                        />
+                      )
+                    })
+                  }
+
                   <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
                     <button
                       onClick={handleLeftClick}

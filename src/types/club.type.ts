@@ -1,3 +1,4 @@
+import { IParties } from './models/parties.type'
 import { IPicture } from './models/picture.type'
 
 /**
@@ -11,18 +12,6 @@ export interface IClub {
   picture?: IPicture
   pictures?: IPicture[]
   parties?: IParties[]
-}
-
-/**
- * type for all parties of clubs
- */
-export interface IParties {
-  id?: number
-  name?: string
-  owner?: string
-  date_party?: Date
-  picture_favoris?: IPicture
-  pictures?: IPicture[]
 }
 
 /**
