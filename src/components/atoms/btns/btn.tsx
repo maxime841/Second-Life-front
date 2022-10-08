@@ -10,7 +10,7 @@ import React from 'react'
  * @param textColor? string | undefined;
  * @returns
  */
-export function Btn ({
+export function Btn({
   children,
   addClass,
   click,
@@ -19,7 +19,7 @@ export function Btn ({
   padding,
   hoverBg,
   bg,
-  rounded
+  rounded,
 }: TBtn) {
   return (
     <button
@@ -36,10 +36,7 @@ export function Btn ({
       text-black
       text-base
       leading-tight
-      w-fit
-      h-fit
-      `}
-    >
+      `}>
       {children}
     </button>
   )

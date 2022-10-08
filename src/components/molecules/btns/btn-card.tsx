@@ -14,8 +14,10 @@ function BtnCard({ club }: TbtnCard) {
   }
 
   return (
-    <div>
-      <Btn click={handlerClickBtn}>En savoir plus</Btn>
+    <>
+      <Btn addClass='mt-8' click={handlerClickBtn}>
+        En savoir plus
+      </Btn>
       {openVolet ? (
         <article>
           {/* pres club */}
@@ -39,43 +41,51 @@ function BtnCard({ club }: TbtnCard) {
                 <span className='font-bold'>Date : </span>
                 {`${new Date(`${party.date_party}`).toLocaleDateString()}`}
               </p>
+
+              {/* image */}
               <h3 className='font-bold'>Images :</h3>
-              <div id={`club ${club.name} et party ${party.name}`} className='carousel w-full'>
-                {party.pictures?.map((picture, index) => (
-                  <div
-                    key={picture.id}
-                    id={`${index}`}
-                    className='carousel-item relative w-full'>
-                    <img
-                      src={picture.picture_url}
-                      className='w-full h-full'
-                    />
-                    <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-                      <a
-                        href={`#${
-                          index === 0 ? party.pictures?.length! - 1 : index - 1
-                        }`}
-                        className='btn btn-circle'>
-                        ❮
-                      </a>
-                      <a
-                        href={`#${
-                          index === party.pictures?.length! - 1
-                            ? index + 1 - party.pictures?.length!
-                            : index + 1
-                        }`}
-                        className='btn btn-circle'>
-                        ❯
-                      </a>
-                    </div>
+              <div className='relative overflow-x-auto"'>
+                <div className='flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden'>
+                  <div className='carousel w-full relative'>
+                    {party.pictures?.map((picture, index) => (
+                      <div
+                        key={picture.id}
+                        id={`${party.id}-${index}`}
+                        className='carousel-item relative w-full'>
+                        <img
+                          src={picture.picture_url}
+                          className='w-full h-full'
+                        />
+                        <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
+                          <a
+                            href={`#${party.id}-${
+                              index === 0
+                                ? party.pictures?.length! - 1
+                                : index - 1
+                            }`}
+                            className='btn btn-circle'>
+                            ❮
+                          </a>
+                          <a
+                            href={`#${party.id}-${
+                              index === party.pictures?.length! - 1
+                                ? index + 1 - party.pictures?.length!
+                                : index + 1
+                            }`}
+                            className='btn btn-circle'>
+                            ❯
+                          </a>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           ))}
         </article>
       ) : null}
-    </div>
+    </>
   )
 }
 
