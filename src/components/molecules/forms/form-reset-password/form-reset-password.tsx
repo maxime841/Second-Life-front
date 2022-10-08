@@ -3,40 +3,34 @@ import { ErrorText } from '@atoms/errors/error-text'
 import InputFull from '@molecules/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 export default function FormResetPassword() {
   const { error, loadingResetPassword } = Store.user.useResetPassword()
-  const { token } = useParams()
-  const [valueEmail, setValueEmail] = useState('')
+  const [searchParams] = useSearchParams()
+  const token = searchParams.get('token')
+  const email = searchParams.get('email')
+  const navigate = useNavigate()
   const [valuePassword, setValuePassword] = useState('')
   const [valuePasswordConfirme, setValuePasswordConfirme] = useState('')
 
   const handlerResetPassword = async (e: React.FormEvent) => {
     e.preventDefault()
     Store.user.activateResetPasswordLoadding()
-    await Store.user.resetPassword({
+    const res = await Store.user.resetPassword({
       password: valuePassword,
       password_confirmation: valuePasswordConfirme,
-      email: valueEmail,
-      token,
+      email: email!,
+      token: token!,
     })
+    if (res) {
+      navigate('/login')
+    }
     Store.user.disabledResetPasswordLoadding()
   }
 
   return (
     <form onSubmit={handlerResetPassword}>
-      {/* input email */}
-      <InputFull
-        placeholder='Veuillez renseigner votre adresse e-mail'
-        value={valueEmail}
-        setValueInput={setValueEmail}
-        addClass='mb-3'
-        type='email'
-        activeReset
-        required
-      />
-
       {/* input password */}
       <InputFull
         placeholder='Nouveau mot de passe'

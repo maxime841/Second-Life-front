@@ -9,51 +9,73 @@ import { TbtnCard } from '@types-app/btn.type'
 function BtnCard({ club }: TbtnCard) {
   const [openVolet, setOpenVolet] = useState(false)
 
-/**
- * fonction qui ouvre ou ferme le volet de la card
- */
   function handlerClickBtn() {
     setOpenVolet(!openVolet)
   }
 
   return (
     <div>
-        <Btn click={handlerClickBtn}>En savoir plus</Btn>
-        {openVolet ? (
-          <article>
-            <p className='font-text text-justify border-2 border-none bg-fond-cards w-fit p-5 mt-8 mb-8 rounded-lg'>
-              {club?.presentation}
-            </p>
-            <div className='carousel w-full'>
-              {pictures?.map(picture => {
-                return (
+      <Btn click={handlerClickBtn}>En savoir plus</Btn>
+      {openVolet ? (
+        <article>
+          {/* pres club */}
+          <h3 className='mt-4 font-bold'>Présentation du club :</h3>
+          <p className='font-text text-justify border-2 border-none bg-fond-cards w-fit p-5 rounded-lg'>
+            {club?.presentation}
+          </p>
+
+          {/* party of club */}
+          {club.parties?.map(party => (
+            <div key={party.id} className='mb-6'>
+              {/* title */}
+              <h3>
+                <span className='font-bold'>Party : </span>
+                {party.name}
+              </h3>
+              <p>
+                <span className='font-bold'>Propriètaire : </span> {party.owner}
+              </p>
+              <p>
+                <span className='font-bold'>Date : </span>
+                {`${new Date(`${party.date_party}`).toLocaleDateString()}`}
+              </p>
+              <h3 className='font-bold'>Images :</h3>
+              <div className='carousel w-full'>
+                {party.pictures?.map((picture, index) => (
                   <div
-                    key={picture?.id}
-                    id={`slide${picture?.id}`}
+                    key={picture.id}
+                    id={`${index}`}
                     className='carousel-item relative w-full'>
                     <img
-                      src={picture?.picture_url}
-                      className='w-full'
-                      alt='presentation du flyers du club' />
+                      src='https://placeimg.com/800/200/arch'
+                      className='w-full h-full'
+                    />
                     <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
-                      <button
-                        onClick={handleLeftClick}
+                      <a
+                        href={`#${
+                          index === 0 ? party.pictures?.length! - 1 : index - 1
+                        }`}
                         className='btn btn-circle'>
                         ❮
-                      </button>
-                      <button
-                        onClick={handleRightClick}
+                      </a>
+                      <a
+                        href={`#${
+                          index === party.pictures?.length! - 1
+                            ? index + 1 - party.pictures?.length!
+                            : index + 1
+                        }`}
                         className='btn btn-circle'>
                         ❯
-                      </button>
+                      </a>
                     </div>
                   </div>
-                )
-              })}
+                ))}
+              </div>
             </div>
-          </article>
-        ) : null}
-      </div>
+          ))}
+        </article>
+      ) : null}
+    </div>
   )
 }
 

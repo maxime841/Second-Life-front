@@ -90,8 +90,15 @@ export const userService = {
    */
   sendForgotPassword: async (email: string) => {
     try {
-      await http.post(Eroute.FORGOT_PASSWORD, { email })
-      // ! toastify
+      const res = await http.post<{ send_email: boolean }>(
+        Eroute.FORGOT_PASSWORD,
+        { email },
+      )
+      if (res.data.send_email) {
+        // ! toastify
+        return true
+      }
+      return false
     } catch (error) {
       AppService.errorMessage(
         userStore.forgotPasswordError$,
@@ -99,13 +106,25 @@ export const userService = {
         Eerror.FORGOT_PASSWORD,
       )
       userStore.forgotPasswordLoading$.next(false)
+      return false
     }
   },
 
+  /**
+   * reset password
+   * @param data TresetPassword
+   */
   resetPassword: async (data: TresetPassword) => {
     try {
-      await http.post(Eroute.RESET_PASSWORD, { ...data })
-      // ! toastify
+      const res = await http.post<{ update_password: boolean }>(
+        Eroute.RESET_PASSWORD,
+        { ...data },
+      )
+      if (res.data.update_password) {
+        // ! toastify
+        return true
+      }
+      return false
     } catch (error) {
       AppService.errorMessage(
         userStore.resetPasswordError$,
@@ -113,6 +132,7 @@ export const userService = {
         Eerror.FORGOT_PASSWORD,
       )
       userStore.resetPasswordLoading$.next(false)
+      return false
     }
   },
 
