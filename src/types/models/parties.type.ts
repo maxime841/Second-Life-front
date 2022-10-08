@@ -8,6 +8,6 @@ import { IPicture } from './picture.type'
     name?: string
     owner?: string
     date_party?: Date
-    picture_favoris?: IPicture
+    picture?: IPicture
     pictures?: IPicture[]
   }
