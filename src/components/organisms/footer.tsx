@@ -8,7 +8,7 @@ function Footer () {
   return (
     <footer className='footer footer-center p-10 bg-base-200 text-base-content rounded'>
       <div className='grid grid-flow-col gap-4'>
-        <LinkText link='/aboutus'>About us</LinkText>
+        <LinkText link='/aboutus'>A propos de nous</LinkText>
         <LinkText link='/mentions'>Mentions legales</LinkText>
         <LinkText link='/contact'>Contact</LinkText>
       </div>
