@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Btn } from '@atoms/btns/btn'
-import { TbtnCard } from '@types-app/btn.type'
+import { TbtnCardClub } from '@types-app/btn.type'
 
 /**
  * btn card for open panel
  * @returns
  */
-function BtnCard({ club }: TbtnCard) {
+function BtnCardClub({ club }: TbtnCardClub) {
   const [openVolet, setOpenVolet] = useState(false)
 
   function handlerClickBtn() {
@@ -25,7 +25,7 @@ function BtnCard({ club }: TbtnCard) {
           </p>
 
           {/* party of club */}
-          {club.parties?.map(party => (
+          {club?.parties?.map(party => (
             <div key={party.id} className='mb-6'>
               {/* title */}
               <h3>
@@ -79,4 +79,4 @@ function BtnCard({ club }: TbtnCard) {
   )
 }
 
-export default BtnCard
+export default BtnCardClub

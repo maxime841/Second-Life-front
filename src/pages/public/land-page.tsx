@@ -1,3 +1,4 @@
+import BtnCardLand from '@molecules/btns/btn-card-land'
 import { Store } from '@store/store'
 import React from 'react'
 import { useParams } from 'react-router-dom'
@@ -24,7 +25,7 @@ export function LandPage () {
         </p>
       </div>
       <div className='flex'>
-        <article className='flex flex-wrap sm:justify-center items-center'>
+        <article className='flex flex-wrap sm:justify-center items-start'>
           {
             land.id
               ? land.houses?.map(house => {
@@ -35,7 +36,7 @@ export function LandPage () {
                       <h2 className='card-title'>{house.name}</h2>
                       <p>{house.presentation}</p>
                       <div className='card-actions justify-end'>
-                        <button className='btn bg-fond_color_button border-none hover:bg-action-bg-hover text-black'>En savoir plus</button>
+                         <BtnCardLand land={land} />
                       </div>
                     </div>
                   </div>

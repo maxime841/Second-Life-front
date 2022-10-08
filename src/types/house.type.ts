@@ -1,3 +1,5 @@
+import { IPicture } from './models/picture.type'
+
 /**
  * type for all houses
  */
@@ -10,8 +12,8 @@ export interface IHouse {
   remaining_house_prims?: number
   date_start_rent?: Date
   date_end_rent?: Date
-  picture_favoris?: string
-  pictures?: string
+  picture_favoris?: IPicture
+  pictures?: IPicture[]
 }
 
 /**

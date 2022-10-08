@@ -1,5 +1,5 @@
 import { Store } from '@store/store'
-import BtnCard from '@molecules/btns/btn-card'
+import BtnCardClub from '@molecules/btns/btn-card-club'
 import React from 'react'
 
 function ClubPage () {
@@ -16,7 +16,7 @@ function ClubPage () {
                 <h2 className='card-title font-title'>club: {club.name}</h2>
                 <p className='font-text'>Propriétaire: {club.owner}</p>
                 <div className='card-actions justify-end'>
-                  <BtnCard club={club} />
+                  <BtnCardClub club={club} />
                 </div>
               </div>
             </div>
