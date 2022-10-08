@@ -48,7 +48,7 @@ function BtnCardLand({ land }: TbtnCardLand) {
                 {house?.pictures?.map((picture, index) => (
                   <div
                     key={picture.id}
-                    id={`${index}`}
+                    id={`${house.id}-${index}`}
                     className='carousel-item relative w-full'>
                     <img
                       src={picture.picture_url}
@@ -56,14 +56,14 @@ function BtnCardLand({ land }: TbtnCardLand) {
                     />
                     <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>
                       <a
-                        href={`#${
+                       href={`#${house.id}-${
                           index === 0 ? house.pictures?.length! - 1 : index - 1
                         }`}
                         className='btn btn-circle'>
                         ❮
                       </a>
                       <a
-                        href={`#${
+                       href={`#${house.id}-${
                           index === house.pictures?.length! - 1
                             ? index + 1 - house.pictures?.length!
                             : index + 1
