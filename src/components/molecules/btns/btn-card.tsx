@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Btn } from '@atoms/btns/btn'
 import { TbtnCard } from '@types-app/btn.type'
 
@@ -40,14 +40,14 @@ function BtnCard({ club }: TbtnCard) {
                 {`${new Date(`${party.date_party}`).toLocaleDateString()}`}
               </p>
               <h3 className='font-bold'>Images :</h3>
-              <div className='carousel w-full'>
+              <div id={`club ${club.name} et party ${party.name}`} className='carousel w-full'>
                 {party.pictures?.map((picture, index) => (
                   <div
                     key={picture.id}
                     id={`${index}`}
                     className='carousel-item relative w-full'>
                     <img
-                      src='https://placeimg.com/800/200/arch'
+                      src={picture.picture_url}
                       className='w-full h-full'
                     />
                     <div className='absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2'>

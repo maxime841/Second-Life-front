@@ -7,7 +7,7 @@ function ClubPage () {
 
   return (
     <section className='flex'>
-      <article className='flex flex-wrap sm:justify-center items-center'>
+      <article className='flex flex-wrap sm:justify-center items-start'>
         {
           clubs.map(club => (
             <div key={club.id} className='card w-96 bg-fond-cards shadow-xl mx-4 my-4'>
