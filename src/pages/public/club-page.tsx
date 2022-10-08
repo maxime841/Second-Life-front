@@ -2,7 +2,7 @@ import { Store } from '@store/store'
 import BtnCardClub from '@molecules/btns/btn-card-club'
 import React from 'react'
 
-function ClubPage () {
+function ClubPage() {
   const clubs = Store.club.useClubs()
 
   return (
