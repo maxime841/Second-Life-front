@@ -1,0 +1,3 @@
+.club-list-box {
+  @apply flex flex-col items-center;
+}

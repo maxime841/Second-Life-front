@@ -2,6 +2,7 @@
  * enum for selected the model of container
  */
 export enum EmodelContainer {
+  club = 'club',
   fit = 'fit',
   xs = '2s',
   s = 's',

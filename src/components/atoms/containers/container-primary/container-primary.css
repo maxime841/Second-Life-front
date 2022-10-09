@@ -27,7 +27,12 @@
 }
 
 .container-fit {
-  @apply min-w-max px-2 py-5 
+  @apply max-w-fit
+    rounded-2xl md:rounded-3xl;
+}
+
+.container-club {
+  @apply max-w-3xl
     rounded-2xl md:rounded-3xl;
 }
 
