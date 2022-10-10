@@ -6,10 +6,6 @@ import { TvoletDetailClub } from './volet-detail-club.type'
 export function VoletDetailClub({ clubCurrent }: TvoletDetailClub) {
   const [openMore, setOpenMore] = useState(false)
 
-  const setting = {
-    dots: true,
-  }
-
   const handlerClickOpenDetail = () => {
     setOpenMore(!openMore)
   }
