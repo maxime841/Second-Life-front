@@ -1,8 +1,14 @@
+import Title from '@atoms/title/title'
+import { FormLogin } from '@molecules/forms/form-login'
+import SectionLogin from '@organisms/section-login/section-login'
 import React from 'react'
 
-function LoginPage () {
+function LoginPage() {
   return (
-    <div>login-page</div>
+    <div>
+      <Title addClass='mb-8 font-bold text-3xl'>Connexion</Title>
+      <SectionLogin />
+    </div>
   )
 }
 

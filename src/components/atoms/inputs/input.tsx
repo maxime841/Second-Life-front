@@ -20,7 +20,7 @@ import React from 'react'
  * @param textSize?: string,
  * @returns
  */
-function Input ({
+function Input({
   id,
   name,
   value,
@@ -35,7 +35,7 @@ function Input ({
   border,
   radius,
   padding,
-  textSize
+  textSize,
 }: TInput) {
   return (
     <input
@@ -48,22 +48,27 @@ function Input ({
       required={required}
       onChange={e => setValueInput(e.target.value)}
       className={`
-          ${classDefault ?? 'block w-96 '} 
+          ${classDefault ?? 'block'} 
           ${addClass} 
-          ${border ?? `
+          ${
+            border ??
+            `
           outline-none 
           border-2 
           border-transparent 
           focus:border-2 
           focus:border-action
-          `} 
+          `
+          } 
           ${radius ?? 'rounded-lg'} 
           ${padding ?? 'py-2 pl-4 pr-4'} 
-          ${colors ?? `
+          ${
+            colors ??
+            `
           bg-fond_claire 
-          `}
+          `
+          }
           ${textSize ?? 'text-input-size-text'}
-         sm:w-52 md:w-60 lg:w-96
         `}
     />
   )

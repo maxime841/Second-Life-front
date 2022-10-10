@@ -1,7 +1,7 @@
 /**
  * type for all image
  */
-export interface TImage {
+export interface IImage {
   src: string
   alt: string
   size?: string

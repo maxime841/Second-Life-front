@@ -8,11 +8,14 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ["Roboto", "sans-serif"],
-        styling: ["charm", "Indie flower"]
+        'title': ["charm"],
+        'text': [ "Indie flower"]
       },
       colors: {
         "fond_claire": "#E6E697",
         "fond_dark": "#801818",
+        "fond-cards": "#EFD242",
+        "fond-dark-cards": "#FF7F00",
         "input_color": "#FBF2B7",
         "fond_header": "#288990",
         "color_title": "#75C9E3",

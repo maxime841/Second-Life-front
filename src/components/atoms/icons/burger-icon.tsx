@@ -16,9 +16,6 @@ function BurgerIcon ({ color, size }: TIcons) {
       width='50px'
       height='50px'
       className={`${color} ${size ?? 'w-6 h-6'}
-      sm:w-10 md:hidden
-      height sm:h-10
-      absolute sm:left-7 top-7
       `}
     >
       <path

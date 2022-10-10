@@ -1,12 +1,14 @@
-import Btn from '@atoms/btns/btn'
+import { Btn } from '@atoms/btns/btn'
 import ChevronDownIcon from '@atoms/icons/chevron-down-icon'
 import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
 import { TMenuDropdownLand } from '@types-app/menu.type'
 import React from 'react'
+import { ILand } from '@types-app/land.type'
 
-function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
+function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()
+  const lands = Store.land.useLands()
 
   return (
     <nav className={`relative ${addClass}`}>
@@ -17,35 +19,23 @@ function MenuDropdownLand ({ children, addClass }: TMenuDropdownLand) {
       </Btn>
 
       {/* menu dropdwon land */}
-      {
-        open
-          ? (
-            <ul
-              className='
+      {open ? (
+        <ul
+          className='
               absolute top-16 left-4 w-64
               p-2 bg-fond_color_button
               rounded-lg
-            '
-            >
-              <li>
-                <LinkText link='terrain1'>
-                  <span>
-                    Terrain1
-                  </span>
-                </LinkText>
-              </li>
-              <li>
-                <LinkText link='terrain2'>
-                  <span>
-                    Terraindsd sdsdsdsd
-                    <span> 2</span>
-                  </span>
-                </LinkText>
-              </li>
-            </ul>
-          )
-          : null
-      }
+              z-10
+            '>
+          {(lands as unknown as ILand[]).map((land: any) => (
+            <li key={land.id}>
+              <LinkText link={`/land/${land.id}`}>
+                <span>{land.name}</span>
+              </LinkText>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </nav>
   )
 }

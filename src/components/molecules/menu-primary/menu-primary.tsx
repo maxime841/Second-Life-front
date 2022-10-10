@@ -6,7 +6,7 @@ import MenuDropdownLand from '@molecules/menu-dropdown-land/menu-dropdown-land'
 
 function MenuPrimary () {
   return (
-    <ul className='flex items-center justify-around'>
+    <ul className='flex items-center justify-around hidden sm:visible md:flex'>
       {/* link home */}
       <li>
         <LinkBtn link='/'>

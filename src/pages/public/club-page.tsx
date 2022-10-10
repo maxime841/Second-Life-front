@@ -1,9 +1,11 @@
+import { SectionListClub } from '@organisms/section-list-club/section-list-club'
 import React from 'react'
 
-function ClubPage () {
+function ClubPage() {
   return (
-    <div>ClubPage</div>
+    <section>
+      <SectionListClub />
+    </section>
   )
 }
-
 export default ClubPage
