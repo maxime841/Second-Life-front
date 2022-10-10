@@ -1,0 +1,13 @@
+.link-primary-app {
+  @apply block w-full
+
+    /* padding */
+    py-3 pl-4 
+
+    /* text */
+    text-lg 
+
+    /* color */
+    hover:bg-fond-dark-cards 
+    dark:hover:bg-fond-cards;
+}

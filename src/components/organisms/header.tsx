@@ -13,7 +13,7 @@ function Header() {
     bg-fond_header
     '>
       {/* Menu burger mobile */}
-      <BtnIconMenuBurger children='' />
+      <BtnIconMenuBurger />
 
       {/* menu principal */}
       <MenuPrimary />

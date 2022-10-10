@@ -12,14 +12,13 @@ import ClubIcon from '@atoms/icons/club-icon'
  * btn dark mode with change icon moon or sun
  * @returns
  */
-function BtnIconMenuBurger({ children, addClass }: TBtnMenuBurger) {
+function BtnIconMenuBurger({ addClass }: TBtnMenuBurger) {
   const menuBurger = Store.menuBurger.useBurgerMenu()
 
   return (
     <div className={`relative display sm:flex md:hidden ${addClass}`}>
       {/* btn dropdown */}
       <Btn click={() => Store.menuBurger.toggleStateMenuBurger(menuBurger)}>
-        <span className='mr-2'>{children}</span>
         <MenuBurgerIcon size='w-4 h-4' />
       </Btn>
 

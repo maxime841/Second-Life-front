@@ -1,0 +1,29 @@
+.divisor-small {
+  @apply h-0.5 w-11/12
+    /* margin */
+    mt-1 mb-1
+    mx-auto
+
+    /* color */
+    bg-black;
+}
+
+.divisor-normal {
+  @apply h-0.5 w-11/12
+    /* margin */
+    mt-2 mb-2
+    mx-auto
+
+    /* color */
+    bg-black;
+}
+
+.divisor-large {
+  @apply h-0.5 w-11/12
+    /* margin */
+    mt-8 mb-8
+    mx-auto
+
+    /* color */
+    bg-black;
+}

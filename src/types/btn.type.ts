@@ -34,14 +34,13 @@ export type TBtnForm = TComponentParent & {
   loading?: boolean
 }
 
-export type TBtnDropdwon = TComponentParent & {
-}
+export type TBtnDropdwon = TComponentParent & {}
 
 export interface TBtnDarkMode {
   addClass?: string
 }
 
-export type TBtnMenuBurger = TComponentParent & {
+export type TBtnMenuBurger = {
   addClass?: string
 }
 
