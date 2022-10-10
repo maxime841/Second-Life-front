@@ -65,4 +65,56 @@ export const userHook = {
 
     return userCurrent
   },
+
+  /**
+   * Error for forgot password
+   * @returns string
+   */
+  useForgotPasswordError: () => {
+    const [error, setError] = useState('')
+    const [loadingFogotPassword, setLoadingFogotPassword] = useState(false)
+
+    useEffect(() => {
+      // reset error didmountcomponent
+      function cleanError() {
+        userService.resetError()
+      }
+
+      // sub error observable
+      userStore.forgotPasswordError$.subscribe(value => setError(value))
+      userStore.forgotPasswordLoading$.subscribe(value =>
+        setLoadingFogotPassword(value),
+      )
+
+      return cleanError()
+    }, [])
+
+    return { error, loadingFogotPassword }
+  },
+
+  /**
+   * hook for error and loading for reset password
+   * @returns string, boolean
+   */
+  useResetPassword: () => {
+    const [error, setError] = useState('')
+    const [loadingResetPassword, setLoadingResetPassword] = useState(false)
+
+    useEffect(() => {
+      // reset error didmountcomponent
+      function cleanError() {
+        userService.resetError()
+      }
+
+      // sub error observable
+      userStore.resetPasswordError$.subscribe(value => setError(value))
+      userStore.resetPasswordLoading$.subscribe(value =>
+        setLoadingResetPassword(value),
+      )
+
+      return cleanError()
+    }, [])
+
+    return { error, loadingResetPassword }
+  },
 }

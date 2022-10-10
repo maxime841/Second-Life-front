@@ -15,6 +15,7 @@ export function ContainerPrimary({
     ${boxClass ?? 'container-box'}
     ${addClass}
     ${model === EmodelContainer.fit ? 'container-fit' : 'container-default'}
+    ${model === EmodelContainer.club ? 'container-club' : 'container-default'}
     ${model === EmodelContainer.xs ? 'container-xs container-small' : null}
     ${model === EmodelContainer.s ? 'container-s container-small' : null}
     ${model === EmodelContainer.m ? 'container-m container-basic' : null}

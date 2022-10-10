@@ -1,5 +1,6 @@
 import { TComponentParent } from './component-parent.type'
 import { IClub } from './club.type'
+import { ILand } from './land.type'
 
 /**
  * type for btn sample example
@@ -44,7 +45,12 @@ export type TBtnMenuBurger = TComponentParent & {
   addClass?: string
 }
 
-export interface TbtnCard {
-  club: IClub
+export interface TbtnCardClub {
+  club?: IClub
+  addClass?: string
+}
+
+export interface TbtnCardLand {
+  land?: ILand
   addClass?: string
 }

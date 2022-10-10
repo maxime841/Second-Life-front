@@ -18,7 +18,27 @@ export const userStore = {
   loginError$: new BehaviorSubject(''),
 
   /**
+   * error forgot password
+   */
+  forgotPasswordError$: new BehaviorSubject(''),
+
+  /**
    * loader for logout request
    */
   logoutLoading$: new BehaviorSubject(false),
+
+  /**
+   * loader for forgot password request
+   */
+  forgotPasswordLoading$: new BehaviorSubject(false),
+
+  /**
+   * loader for reset Password request
+   */
+  resetPasswordError$: new BehaviorSubject(''),
+
+  /**
+   * loader for reset Password request
+   */
+  resetPasswordLoading$: new BehaviorSubject(false),
 }

@@ -1,9 +1,6 @@
 import { AppHook } from './app/app.hook'
 import { AppService } from './app/app.service'
 import { AppStore } from './app/app.store'
-import { ClubPanelHook } from './club-panel/club-panel.hook'
-import { ClubPanelService } from './club-panel/club-panel.service'
-import { ClubPanelStore } from './club-panel/club-panel.store'
 import { ClubHook } from './club/club.hook'
 import { ClubService } from './club/club.service'
 import { ClubStore } from './club/club.store'
@@ -65,11 +62,6 @@ export const Store = {
     ...ClubStore,
     ...ClubService,
     ...ClubHook
-  },
-  clubPanel: {
-    ...ClubPanelStore,
-    ...ClubPanelService,
-    ...ClubPanelHook
   },
   user: {
     ...userStore,

@@ -9,19 +9,18 @@ import MagnifyingGlassIcon from '@atoms/icons/magnifying-glass-icon'
  * @returns
  */
 
-function SearchBar ({
-  children
-}: TInput) {
+function SearchBar({ children, addClass }: TInput) {
   const [value, setValue] = useState('')
 
   return (
-    <div className={`
-    flex items-center
-    rounded-lg
-    bg-fond_claire
-    relative
-    `}
-    >
+    <div
+      className={`
+      items-center
+      rounded-lg
+      bg-fond_claire
+      relative
+      ${addClass}
+    `}>
       <div className='absolute pl-2'>
         <MagnifyingGlassIcon size='w-6 h-6' color='text-black' />
       </div>

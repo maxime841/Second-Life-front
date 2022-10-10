@@ -11,4 +11,5 @@ export type Terror = {
  */
 export enum Eerror {
   LOGIN = 'Erreur de connexion',
+  FORGOT_PASSWORD = 'Une Erreur est survenue',
 }

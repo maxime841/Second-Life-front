@@ -3,7 +3,11 @@ import { AppService } from '@store/app/app.service'
 import { TokenService } from '@store/token/token.service'
 import { Eerror } from '@types-app/error.type'
 import { Ijwt } from '@types-app/models/jwt.model'
-import { Iuser, IuserLogout } from '@types-app/models/user.model'
+import {
+  Iuser,
+  IuserLogout,
+  TresetPassword,
+} from '@types-app/models/user.model'
 import { Eroute } from '@types-app/route.type'
 import { userStore } from './user.store'
 
@@ -78,5 +82,85 @@ export const userService = {
       userService.removeUserCurrent()
       userStore.logoutLoading$.next(false)
     }
+  },
+
+  /**
+   * send email for forgot password
+   * @param email string
+   */
+  sendForgotPassword: async (email: string) => {
+    try {
+      const res = await http.post<{ send_email: boolean }>(
+        Eroute.FORGOT_PASSWORD,
+        { email },
+      )
+      if (res.data.send_email) {
+        // ! toastify
+        return true
+      }
+      return false
+    } catch (error) {
+      AppService.errorMessage(
+        userStore.forgotPasswordError$,
+        error,
+        Eerror.FORGOT_PASSWORD,
+      )
+      userStore.forgotPasswordLoading$.next(false)
+      return false
+    }
+  },
+
+  /**
+   * reset password
+   * @param data TresetPassword
+   */
+  resetPassword: async (data: TresetPassword) => {
+    try {
+      const res = await http.post<{ update_password: boolean }>(
+        Eroute.RESET_PASSWORD,
+        { ...data },
+      )
+      if (res.data.update_password) {
+        // ! toastify
+        return true
+      }
+      return false
+    } catch (error) {
+      AppService.errorMessage(
+        userStore.resetPasswordError$,
+        error,
+        Eerror.FORGOT_PASSWORD,
+      )
+      userStore.resetPasswordLoading$.next(false)
+      return false
+    }
+  },
+
+  /**
+   * active loader for forgot password
+   */
+  activateForgotPasswordLoadding: () => {
+    userStore.forgotPasswordLoading$.next(true)
+  },
+
+  /**
+   * disable loader for forgot password
+   */
+  disabledForgotPasswordLoadding: () => {
+    userStore.forgotPasswordLoading$.next(true)
+  },
+
+  /**
+   * active loader for reset password
+   */
+  activateResetPasswordLoadding: () => {
+    userStore.resetPasswordLoading$.next(true)
+  },
+
+  /**
+   * disable loader for reset password
+   */
+  disabledResetPasswordLoadding: () => {
+    userStore.resetPasswordLoading$.next(true)
   },
 }
