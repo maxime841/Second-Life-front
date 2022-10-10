@@ -19,7 +19,11 @@ function Header() {
       <MenuPrimary />
 
       {/* search bar */}
-      <SearchBar value='' placeholder='' setValueInput={undefined}>
+      <SearchBar
+        addClass='hidden sm:flex ml-2'
+        value=''
+        placeholder=''
+        setValueInput={undefined}>
         <span>Barre de recherche</span>
       </SearchBar>
 

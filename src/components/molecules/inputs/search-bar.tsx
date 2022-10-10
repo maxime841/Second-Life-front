@@ -15,12 +15,11 @@ function SearchBar({ children, addClass }: TInput) {
   return (
     <div
       className={`
-      hidden sm:flex items-center
-    rounded-lg
-    bg-fond_claire
-    relative
-    ml-2
-    ${addClass}
+      items-center
+      rounded-lg
+      bg-fond_claire
+      relative
+      ${addClass}
     `}>
       <div className='absolute pl-2'>
         <MagnifyingGlassIcon size='w-6 h-6' color='text-black' />
