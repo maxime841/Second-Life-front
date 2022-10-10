@@ -2,7 +2,7 @@ import React from 'react'
 import { TLink } from '@types-app/link.type'
 import { NavLink } from 'react-router-dom'
 
-function LinkBtn ({
+function LinkBtn({
   children,
   link,
   addClass,
@@ -11,19 +11,19 @@ function LinkBtn ({
   hoverBg,
   padding,
   rounded,
-  textColor
+  textColor,
 }: TLink) {
   return (
     <NavLink
       to={link}
       onClick={click}
       end
-      className={({ isActive }) => (
+      className={({ isActive }) =>
         isActive
           ? `
           ${textColor ?? 'hover:text-action'}
           ${addClass}
-          ${padding ?? 'py-4 px-5'}
+          ${padding ?? 'py-2 px-3 lg:py-4 lg:px-5'}
           ${bg ?? 'bg-action-bg-hover'}
           ${rounded ?? 'rounded-lg'}
           ${hoverBg ?? 'hover:bg-action-bg-hover'}
@@ -37,7 +37,7 @@ function LinkBtn ({
           : `
           ${textColor ?? 'hover:text-action'}
           ${addClass}
-          ${padding ?? 'py-4 px-5'}
+          ${padding ?? 'py-2 px-3 lg:py-4 lg:px-5'}
           ${bg ?? 'bg-fond_color_button'}
           ${rounded ?? 'rounded-lg'}
           ${hoverBg ?? 'hover:bg-action-bg-hover'}
@@ -47,8 +47,8 @@ function LinkBtn ({
           leading-tight
           w-fit
           h-fit
-          `)}
-    >
+          `
+      }>
       {children}
     </NavLink>
   )

@@ -1,12 +1,12 @@
 import { Store } from '@store/store'
-import { Http } from './http.instance'
+import { http } from './http.instance'
 
 export const HttpInterceptor = {
   /**
-     * interceptor request
-     * */
+   * interceptor request
+   * */
   request: () => {
-    Http.interceptors.request.use(
+    http.interceptors.request.use(
       config => {
         const storageToken = Store.token.checkStorageForConnected()
         if (storageToken) {
@@ -20,19 +20,19 @@ export const HttpInterceptor = {
       error => {
         console.log('Error request Interceptor', error)
         return Promise.reject(error)
-      }
+      },
     )
   },
 
   /**
-     * interceptor response
-     * */
+   * interceptor response
+   * */
   response: () => {
-    Http.interceptors.response.use(
+    http.interceptors.response.use(
       response => {
         if (response.status === 401) {
           Store.token.removeTokenAndStorage()
-          // Store.user.removeUserCurrent();
+          Store.user.removeUserCurrent()
         }
         console.log('response Interceptor', response)
         return response
@@ -40,7 +40,7 @@ export const HttpInterceptor = {
       error => {
         console.log('Error response Interceptor', error)
         return Promise.reject(error)
-      }
+      },
     )
-  }
+  },
 }
