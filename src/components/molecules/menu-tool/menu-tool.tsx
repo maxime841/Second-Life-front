@@ -9,7 +9,7 @@ function MenuTool() {
   return (
     <ul className='flex items-center justify-center'>
       {/* btn dark mode */}
-      <BtnIconDarkMode addClass='mr-8' />
+      <BtnIconDarkMode addClass='mx-2 md:mx-4' />
 
       {/* btn page connexion */}
       <li>

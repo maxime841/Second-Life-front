@@ -10,7 +10,7 @@ import React from 'react'
  * @param textColor? string | undefined;
  * @returns
  */
-export function Btn ({
+export function Btn({
   children,
   addClass,
   click,
@@ -19,7 +19,7 @@ export function Btn ({
   padding,
   hoverBg,
   bg,
-  rounded
+  rounded,
 }: TBtn) {
   return (
     <button
@@ -28,18 +28,16 @@ export function Btn ({
       className={`
       ${textColor ?? 'hover:text-action '}
       ${addClass}
-      ${padding ?? 'py-4 px-5'}
+      ${padding ?? 'py-2 px-3 lg:py-4 lg:px-5'}
       ${bg ?? 'bg-fond_color_button'}
       ${rounded ?? 'rounded-lg'}
       ${hoverBg ?? 'hover:bg-action-bg-hover'}
       flex items-center justify-center
       text-black
-      text-base
       leading-tight
       w-fit
       h-fit
-      `}
-    >
+      `}>
       {children}
     </button>
   )

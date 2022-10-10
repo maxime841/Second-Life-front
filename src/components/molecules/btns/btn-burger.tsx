@@ -16,7 +16,7 @@ function BtnIconMenuBurger({ children, addClass }: TBtnMenuBurger) {
   const menuBurger = Store.menuBurger.useBurgerMenu()
 
   return (
-    <div className={`relative display sm:flex md:invisible ${addClass}`}>
+    <div className={`relative display sm:flex md:hidden ${addClass}`}>
       {/* btn dropdown */}
       <Btn click={() => Store.menuBurger.toggleStateMenuBurger(menuBurger)}>
         <span className='mr-2'>{children}</span>

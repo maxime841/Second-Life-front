@@ -4,14 +4,14 @@ import MenuPrimary from '@molecules/menu-primary/menu-primary'
 import MenuTool from '@molecules/menu-tool/menu-tool'
 import BtnIconMenuBurger from '@molecules/btns/btn-burger'
 
-function Header () {
+function Header() {
   return (
-    <header className='
-    flex items-center justify-around
-    py-4 px-4
+    <header
+      className='
+    flex items-center justify-between sm:justify-around
+    py-4 px-2
     bg-fond_header
-    '
-    >
+    '>
       {/* Menu burger mobile */}
       <BtnIconMenuBurger children='' />
 
@@ -19,7 +19,9 @@ function Header () {
       <MenuPrimary />
 
       {/* search bar */}
-      <SearchBar value='' placeholder='' setValueInput={undefined}><span>Barre de recherche</span></SearchBar>
+      <SearchBar value='' placeholder='' setValueInput={undefined}>
+        <span>Barre de recherche</span>
+      </SearchBar>
 
       {/* menu tool */}
       <MenuTool />
