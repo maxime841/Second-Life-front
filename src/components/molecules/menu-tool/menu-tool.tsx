@@ -34,7 +34,7 @@ function MenuTool() {
 
       {/* btn page connexion */}
       <li>
-        <LinkBtn link={`${userCurrent.id ? '/dashboard' : '/login'}`}>
+        <LinkBtn link={`${userCurrent.id ? '/user/profil' : '/login'}`}>
           {userCurrent.id ? <span>Mon compte</span> : <span>Se connecter</span>}
         </LinkBtn>
       </li>

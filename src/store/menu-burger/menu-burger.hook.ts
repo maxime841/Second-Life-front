@@ -15,5 +15,20 @@ export const MenuBurgerHook = {
     }, [])
 
     return menuBurger
+  },
+
+  /**
+   * hook for observable burgerMenu$
+   */
+   useBurgerMenuOffice: () => {
+    const [menuBurgerOffice, setBurgerMenuOffice] = useState(false)
+
+    useEffect(() => {
+      MenuBurgerStore.menuBurgerOffice$.subscribe(
+        (value: boolean) => setBurgerMenuOffice(value)
+      )
+    }, [])
+
+    return menuBurgerOffice
   }
 }

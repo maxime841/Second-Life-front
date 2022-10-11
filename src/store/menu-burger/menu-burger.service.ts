@@ -7,5 +7,13 @@ export const MenuBurgerService = {
 
   closeStateMenuBurger: () => {
     MenuBurgerStore.menuBurger$.next(false)
+  },
+
+  toggleStateMenuBurgerOffice: (value: boolean) => {
+    MenuBurgerStore.menuBurgerOffice$.next(!value)
+  },
+
+  closeStateMenuBurgerOffice: () => {
+    MenuBurgerStore.menuBurgerOffice$.next(false)
   }
 }

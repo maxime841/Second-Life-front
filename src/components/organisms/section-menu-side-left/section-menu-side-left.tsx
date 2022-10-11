@@ -1,15 +1,18 @@
 import { Divisor } from '@atoms/divisors/divisor'
 import { EdivisorSize } from '@atoms/divisors/divisor.type'
 import { LinkPrimary } from '@atoms/links/link-primary/link-primary'
+import BtnIconMenuBurgerOffice from '@molecules/btns/btn-burger-office'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 export function SectionMenuSideLeft() {
   return (
-    <nav className='flex-none w-52 bg-fond-cards dark:bg-fond-dark-cards top-0 max-h-screen text-black'>
+    <section>
+      <BtnIconMenuBurgerOffice />
+    <nav className='display sm:hidden md:flex-none w-52 bg-fond-cards dark:bg-fond-dark-cards top-0 max-h-screen text-black'>
       <ul>
         <li>
-          <LinkPrimary link='/'>Tableau de bord</LinkPrimary>
+          <LinkPrimary link='/dashboard'>Tableau de bord</LinkPrimary>
         </li>
       </ul>
 
@@ -20,30 +23,51 @@ export function SectionMenuSideLeft() {
       <ul>
         <li>
           <NavLink
-            to='/'
+            to='/lands'
             className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
             Terrain
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/'
-            className='block pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
-            Vfdsffgfd
+            to='/houses'
+            className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
+            Maisons
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/'
-            className='block pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
-            Sfdggdhd
+            to='/tenants'
+            className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
+            Locataires
+          </NavLink>
+        </li>
+      </ul>
+
+         {/* divisor */}
+      <Divisor sizeModel={EdivisorSize.L} />
+
+        {/* cat club */}
+      <ul>
+        <li>
+          <NavLink
+            to='/clubs'
+            className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
+            clubs
           </NavLink>
         </li>
         <li>
           <NavLink
-            to='/'
-            className='block pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
-            Tsfsdfdsferrain
+            to='/djs'
+            className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
+            Djs
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/dancers'
+            className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
+            Danseurs
           </NavLink>
         </li>
       </ul>
@@ -51,15 +75,17 @@ export function SectionMenuSideLeft() {
       {/* divisor */}
       <Divisor sizeModel={EdivisorSize.L} />
 
-      {/* cat club */}
+      {/* cat user */}
       <ul>
-        <li>
-          <a>sdf</a>
-        </li>
-        <li>
-          <a>dfsdfsd</a>
+      <li>
+          <NavLink
+            to='/users'
+            className='block py-3 pl-4 text-lg hover:bg-fond-dark-cards dark:hover:bg-fond-cards w-full'>
+            Utilisateurs
+          </NavLink>
         </li>
       </ul>
     </nav>
+    </section>
   )
 }

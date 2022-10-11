@@ -1,3 +1,4 @@
+
 /**
  * type for input sample
  */
@@ -6,7 +7,7 @@ export type TInput = {
   id?: string
   name?: string
   type?: string
-  value: string
+  value: string | undefined
   disabled?: boolean
   placeholder: string
   required?: boolean
