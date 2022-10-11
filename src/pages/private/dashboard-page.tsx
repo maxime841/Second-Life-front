@@ -1,11 +1,13 @@
 import LinkBtn from '@atoms/links/link-btn'
+import { TitlePagePrivate } from '@atoms/title/title-page-private/title-page-private'
 import { Store } from '@store/store'
 import React from 'react'
 
 export function DashboardPage() {
   return (
     <section>
-      <p>DashboardPage</p>
+      {/* title page */}
+      <TitlePagePrivate>Tableau de bord</TitlePagePrivate>
     </section>
   )
 }

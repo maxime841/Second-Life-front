@@ -1,0 +1,3 @@
+.title-page-private {
+  @apply font-bold font-title text-2xl md:text-4xl text-center;
+}
