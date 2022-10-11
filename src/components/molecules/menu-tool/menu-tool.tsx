@@ -12,7 +12,6 @@ function MenuTool() {
   const navigate = useNavigate()
 
   const handlerClickDisconnect = async () => {
-    console.log('coucou')
     const res = await Store.user.logout()
     if (res) {
       navigate('/login')
@@ -28,7 +27,7 @@ function MenuTool() {
       {userCurrent.id ? (
         <TooltipBasic dataTip='Me déconnecter' positionTip='tooltip-bottom'>
           <BtnIcon click={handlerClickDisconnect} addClass='mr-2 md:mr-4'>
-            <LogoutIcon />
+            <LogoutIcon color='text-error' />
           </BtnIcon>
         </TooltipBasic>
       ) : null}
