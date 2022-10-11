@@ -24,7 +24,14 @@ export function StatLand() {
       {/* stat */}
       <div className='mb-6'>
         <Progress
-          color={Math.round((100 * mean) / high) < 50 ? 'green' : 'red'}
+          color={
+            Math.round((100 * mean) / high) < 35
+              ? 'green'
+              : Math.round((100 * mean) / high) > 35 ||
+                Math.round((100 * mean) / high) < 65
+              ? 'orange'
+              : 'red'
+          }
           value={Math.round((100 * mean) / high)}
           label={`PL ${Math.round(mean)} $`}
           size={24}
@@ -40,7 +47,14 @@ export function StatLand() {
       <LabelPrimary>Temps de location : </LabelPrimary>
       <div className='mb-6'>
         <Progress
-          color={Math.round((100 * meanTime) / highTime) < 50 ? 'green' : 'red'}
+          color={
+            Math.round((100 * meanTime) / highTime) < 35
+              ? 'red'
+              : Math.round((100 * meanTime) / highTime) > 35 ||
+                Math.round((100 * meanTime) / highTime) < 65
+              ? 'orange'
+              : 'green'
+          }
           value={Math.round((100 * meanTime) / highTime)}
           label={`TL ${Math.round(meanTime)} J`}
           size={24}

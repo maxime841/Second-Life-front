@@ -11,7 +11,9 @@ export function DashboardPage() {
       <TitlePagePrivate>Tableau de bord</TitlePagePrivate>
 
       {/* section stats */}
-      <SectionStatDashboard />
+      <div className='mt-8'>
+        <SectionStatDashboard />
+      </div>
     </section>
   )
 }

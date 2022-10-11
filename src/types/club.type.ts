@@ -1,3 +1,5 @@
+import { Idancer } from './models/dancer.type'
+import { Idj } from './models/dj.type'
 import { IParties } from './models/parties.type'
 import { IPicture } from './models/picture.type'
 
@@ -14,6 +16,8 @@ export interface IClub {
   picture?: IPicture
   pictures?: IPicture[]
   parties?: IParties[]
+  djs?: Idj[]
+  dancers?: Idancer[]
 }
 
 /**
