@@ -29,7 +29,7 @@ export function StatLand() {
               ? 'green'
               : Math.round((100 * mean) / high) > 35 ||
                 Math.round((100 * mean) / high) < 65
-              ? 'orange'
+              ? 'yellow'
               : 'red'
           }
           value={Math.round((100 * mean) / high)}
