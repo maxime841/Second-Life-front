@@ -77,10 +77,12 @@ export const userService = {
       }
 
       userStore.logoutLoading$.next(false)
+      return true
     } catch (error) {
       TokenService.removeTokenAndStorage()
       userService.removeUserCurrent()
       userStore.logoutLoading$.next(false)
+      return false
     }
   },
 

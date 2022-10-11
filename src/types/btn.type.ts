@@ -8,7 +8,7 @@ import { ILand } from './land.type'
  */
 export type TBtn = TComponentParent & {
   ref?: HTMLDivElement | null
-  click?: () => void | boolean
+  click?: () => void
   submit?: boolean
   addClass?: string
   textColor?: string
