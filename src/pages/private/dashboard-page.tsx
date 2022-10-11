@@ -1,5 +1,6 @@
 import LinkBtn from '@atoms/links/link-btn'
 import { TitlePagePrivate } from '@atoms/title/title-page-private/title-page-private'
+import { SectionStatDashboard } from '@organisms/section-stat-dashboard/section-stat-dashboard'
 import { Store } from '@store/store'
 import React from 'react'
 
@@ -8,6 +9,9 @@ export function DashboardPage() {
     <section>
       {/* title page */}
       <TitlePagePrivate>Tableau de bord</TitlePagePrivate>
+
+      {/* section stats */}
+      <SectionStatDashboard />
     </section>
   )
 }

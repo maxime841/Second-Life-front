@@ -11,7 +11,9 @@ export function LabelPrimary({
   return (
     <label className={`block mb-4 ${addClassLabel}`}>
       {children}
-      <span className={`label-primary-app ${addClassValue}`}>{value}</span>
+      {value ? (
+        <span className={`label-primary-app ${addClassValue}`}>{value}</span>
+      ) : null}
     </label>
   )
 }

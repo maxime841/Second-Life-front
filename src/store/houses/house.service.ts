@@ -1,13 +1,18 @@
 import { http } from '@config-app/http/http.instance'
-import { IHouseResponse } from '@types-app/house.type'
+import { Store } from '@store/store'
+import { IHouseResponse, IHousesResponse } from '@types-app/house.type'
+import { Eroute } from '@types-app/route.type'
 import { HouseStore } from './houses.store'
 
 export const HouseService = {
-
-  /* getAllHouses: async () => {
-    const res = await http.get<IHousesResponse>()
-    HouseStore.houses$.next([...res.data.houses!])
+  /**
+   * recover all house
+   */
+  getAllHouses: async () => {
+    const res = await http.get<IHousesResponse>(Eroute.GET_ALL_HOUSE)
+    Store.house.houses$.next([...res.data.houses!])
   },
+
   /**
    * get one house via id when user click house card
    * @param id string

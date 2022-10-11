@@ -17,15 +17,15 @@ export interface IHouse {
 }
 
 /**
-   * type for response one house
-   */
+ * type for response one house
+ */
 export interface IHouseResponse {
   house: IHouse
 }
 
 /**
-   * type for response all houses
-   */
+ * type for response all houses
+ */
 export interface IHousesResponse {
-  houses?: IHouse[]
+  houses: IHouse[]
 }

@@ -1,5 +1,7 @@
+import { Store } from '@store/store'
 import { ILand } from '@types-app/land.type'
 import { useEffect, useState } from 'react'
+import { map, pipe } from 'rxjs'
 import { LandService } from './land.service'
 import { LandStore } from './land.store'
 
@@ -42,5 +44,20 @@ export const LandHook = {
 
     // return variable hook
     return land
-  }
+  },
+
+  /**
+   * hook for number of land
+   */
+  useCountLand: () => {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+      Store.land.lands$
+        .pipe(map(lands => lands.length))
+        .subscribe(value => setCount(value))
+    }, [])
+
+    return count
+  },
 }
