@@ -12,18 +12,14 @@ return (
     <nav className='menu-side-left-profil'>
       <ul>
         {
-          user
+        user.avatar
         ? <img src={user.avatar} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
-        : !user
-        ? <img src={users} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
-        : null
+        : <img src={users} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
         }
         {
         <LinkPrimary link='/user/profil'>Mes informations</LinkPrimary>
          ? <Btn addClass='ml-5'>Ajouter ma photo</Btn>
-        : <LinkPrimary link='/user/profil/update'>Modifier mon compte</LinkPrimary>
-         ? <Btn addClass='ml-5'>Modifier ma photo</Btn>
-        : null
+         : <Btn addClass='ml-5'>Modifier ma photo</Btn>
         }
         <li className='mt-4'>
           <LinkPrimary link='/user/profil'>Mes informations</LinkPrimary>
