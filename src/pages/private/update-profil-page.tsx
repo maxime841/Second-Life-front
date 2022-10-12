@@ -26,6 +26,10 @@ function ProfilUpdatePage() {
        <InputFull placeholder='' value={user.name } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
        <LabelPrimary>Mon nouveau Nom: </LabelPrimary>
        <InputFull placeholder='' value={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
+       <LabelPrimary>Mon ancien Email: </LabelPrimary>
+       <InputFull placeholder='' value={user.email } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
+       <LabelPrimary>Mon nouveau Email: </LabelPrimary>
+       <InputFull placeholder='' value={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
        <Btn>Sauvegarder</Btn>
        </section>
       </div>
