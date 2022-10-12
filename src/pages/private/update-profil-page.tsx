@@ -8,12 +8,14 @@ import InputFull from '@molecules/inputs/input-full'
 import { SectionMenuSideLeftProfil } from '@organisms/section-menu-side-left-profil/menu-side-left-profil'
 import { Store } from '@store/store'
 import userEvent from '@testing-library/user-event'
-import React from 'react'
+import React, { useState } from 'react'
 
 function ProfilUpdatePage() {
     const user = Store.user.useUserCurrent()
     const updatePswd = Store.user.useResetPassword()
     console.log('updatePswd', updatePswd)
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
 
   return (
     <main>
@@ -25,11 +27,11 @@ function ProfilUpdatePage() {
        <LabelPrimary>Mon ancien Nom: </LabelPrimary>
        <InputFull placeholder='' value={user.name } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
        <LabelPrimary>Mon nouveau Nom: </LabelPrimary>
-       <InputFull placeholder='' value={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
+       <InputFull placeholder='' value={name} setValueInput={setName} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
        <LabelPrimary>Mon ancien Email: </LabelPrimary>
        <InputFull placeholder='' value={user.email } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
        <LabelPrimary>Mon nouveau Email: </LabelPrimary>
-       <InputFull placeholder='' value={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
+       <InputFull placeholder='' value={email} setValueInput={setEmail} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
        <Btn>Sauvegarder</Btn>
        </section>
       </div>
