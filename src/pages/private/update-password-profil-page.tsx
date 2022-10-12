@@ -14,13 +14,13 @@ function ProfilUpdatePasswordPage() {
       <TitlePagePrivate>Mon compte</TitlePagePrivate>
       <div className='flex mt-8'>
       <SectionMenuSideLeftProfil />
-      <section className='w-full px-8'>
+      <section className='w-full px-8 border-2 border-black w-fit p-6 mt-12 ml-12 rounded-lg'>
         <TitleState>Modifier mon mot de passe</TitleState>
         <article>
             <LabelPrimary>Mon ancien mot de passe</LabelPrimary>
-            <InputFull value={''} placeholder={''} setValueInput={undefined}></InputFull>
+            <InputFull value={''} placeholder={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4'></InputFull>
             <LabelPrimary>Mon nouveau mot de passe</LabelPrimary>
-            <InputFull value={''} placeholder={''} setValueInput={undefined}></InputFull>
+            <InputFull value={''} placeholder={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12'></InputFull>
             <Btn>Valider</Btn>
         </article>
       </section>

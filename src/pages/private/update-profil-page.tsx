@@ -20,12 +20,13 @@ function ProfilUpdatePage() {
       <TitlePagePrivate>Mon compte</TitlePagePrivate>
       <div className='flex mt-8'>
       <SectionMenuSideLeftProfil />
-      <section className='w-full px-8'>
+      <section className='w-full px-8 border-2 border-black w-fit p-6 mt-12 ml-12 rounded-lg'>
         <TitleState>Modifier mon compte</TitleState>
        <LabelPrimary>Mon ancien Nom: </LabelPrimary>
-       <InputFull placeholder='' value={user.name } setValueInput={undefined} />
+       <InputFull placeholder='' value={user.name } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
        <LabelPrimary>Mon nouveau Nom: </LabelPrimary>
-       <InputFull placeholder='' value={''} setValueInput={undefined} />
+       <InputFull placeholder='' value={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
+       <Btn>Sauvegarder</Btn>
        </section>
       </div>
     </main>

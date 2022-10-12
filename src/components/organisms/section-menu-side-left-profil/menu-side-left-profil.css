@@ -4,6 +4,7 @@
     bg-fond-cards 
     dark:bg-fond-dark-cards 
     top-0 
+    sm:left-2 md:left-24
     max-h-screen 
     text-black 
     rounded-lg
