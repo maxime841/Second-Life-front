@@ -9,7 +9,7 @@ export function LinkPrimary({ children, link, addClass, bg }: TlinkPrimary) {
     isActive
       ? `link-primary-app 
       ${addClass}
-      ${bg ?? 'bg-action-bg-hover bg-fond-cards dark:bg-fond-dark-cards'}
+      ${bg ?? 'bg-action-bg-hover dark:bg-action-bg-hover bg-fond-cards dark:bg-fond-dark-cards'}
       flex-none 
       w-52  
       top-0 
@@ -18,7 +18,7 @@ export function LinkPrimary({ children, link, addClass, bg }: TlinkPrimary) {
       : `
       link-primary-app 
       ${addClass}
-      ${bg ?? 'bg-fond-cards dark:bg-fond-dark-cards bg-fond-cards dark:bg-fond-dark-cards'}
+      ${bg ?? 'bg-fond-cards dark:bg-fond-dark-cards bg-fond-cards'}
       flex-none 
       w-52  
       top-0 
