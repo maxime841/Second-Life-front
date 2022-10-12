@@ -1,14 +1,17 @@
 import { Btn } from '@atoms/btns/btn'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
-import { LinkPrimary } from '@atoms/links/link-primary/link-primary'
-import Title from '@atoms/title/title'
 import { TitlePagePrivate } from '@atoms/title/title-page-private/title-page-private'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
 import InputFull from '@molecules/inputs/input-full'
 import { SectionMenuSideLeftProfil } from '@organisms/section-menu-side-left-profil/menu-side-left-profil'
-import React from 'react'
+import { Store } from '@store/store'
+import React, { useState } from 'react'
 
 function ProfilUpdatePasswordPage() {
+  const [password, setPassword] = useState()
+  const [newPassword, setNewPassword] = useState()
+  console.log('lettre tapée', password)
+  console.log('lettre tapée', newPassword)
   return (
     <main>
       <TitlePagePrivate>Mon compte</TitlePagePrivate>
@@ -18,10 +21,10 @@ function ProfilUpdatePasswordPage() {
         <TitleState>Modifier mon mot de passe</TitleState>
         <article>
             <LabelPrimary>Mon ancien mot de passe</LabelPrimary>
-            <InputFull value={''} placeholder={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4'></InputFull>
+            <InputFull type='password' value={password} placeholder={'Taper votre mot de passe'} setValueInput={setPassword} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
             <LabelPrimary>Mon nouveau mot de passe</LabelPrimary>
-            <InputFull value={''} placeholder={''} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-12'></InputFull>
-            <Btn>Valider</Btn>
+            <InputFull type='password' value={newPassword} placeholder={'Taper votre nouveau mot de passe'} setValueInput={setNewPassword} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
+            <Btn click={() => Store.user.useResetPassword()}>Valider</Btn>
         </article>
       </section>
       </div>
