@@ -1,6 +1,7 @@
 import { TComponentParent } from './component-parent.type'
 import { IClub } from './club.type'
 import { ILand } from './land.type'
+import { IPicture } from './models/picture.type'
 
 /**
  * type for btn sample example
@@ -51,5 +52,10 @@ export interface TbtnCardClub {
 
 export interface TbtnCardLand {
   land?: ILand
+  addClass?: string
+}
+
+export type TbtnUploadPicture = TBtn & TComponentParent & {
+  picture?: IPicture
   addClass?: string
 }

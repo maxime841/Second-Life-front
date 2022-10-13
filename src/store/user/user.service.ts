@@ -3,6 +3,7 @@ import { AppService } from '@store/app/app.service'
 import { TokenService } from '@store/token/token.service'
 import { Eerror } from '@types-app/error.type'
 import { Ijwt } from '@types-app/models/jwt.model'
+import { IPicture } from '@types-app/models/picture.type'
 import {
   Iuser,
   IuserLogout,
@@ -164,5 +165,9 @@ export const userService = {
    */
   disabledResetPasswordLoadding: () => {
     userStore.resetPasswordLoading$.next(true)
+  },
+
+  updatePicture: (picture: IPicture) => {
+    userStore.updatePicture$.next({ ...picture })
   },
 }

@@ -1,3 +1,4 @@
+import { IPicture } from '@types-app/models/picture.type'
 import { Iuser } from '@types-app/models/user.model'
 import { useEffect, useState } from 'react'
 import { userService } from './user.service'
@@ -116,5 +117,19 @@ export const userHook = {
     }, [])
 
     return { error, loadingResetPassword }
+  },
+
+  /**
+   * hook for update picture
+   * @returns picture
+   */
+   useUpdatePicture: () => {
+    const [picture, setPicture] = useState({} as IPicture)
+
+    useEffect(() => {
+      userStore.updatePicture$.subscribe(value => setPicture(value))
+    }, [])
+
+    return picture
   },
 }

@@ -1,5 +1,5 @@
-import { Btn } from '@atoms/btns/btn'
 import { LinkPrimary } from '@atoms/links/link-primary/link-primary'
+import { BtnUploadPicture } from '@molecules/btns/btn-upload-picture'
 import { Store } from '@store/store'
 import React from 'react'
 import users from '../../../assets/user-profil.jpg'
@@ -16,11 +16,7 @@ return (
         ? <img src={user.avatar} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
         : <img src={users} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
         }
-        {
-        <LinkPrimary link='/user/profil'>Mes informations</LinkPrimary>
-         ? <Btn addClass='ml-5'>Ajouter ma photo</Btn>
-         : <Btn addClass='ml-5'>Modifier ma photo</Btn>
-        }
+        <BtnUploadPicture addClass='ml-5'>Ajouter ma photo</BtnUploadPicture>
         <li className='mt-4'>
           <LinkPrimary link='/user/profil'>Mes informations</LinkPrimary>
         </li>

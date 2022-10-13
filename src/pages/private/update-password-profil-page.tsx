@@ -24,7 +24,7 @@ function ProfilUpdatePasswordPage() {
             <InputFull type='password' value={password} placeholder={'Taper votre mot de passe'} setValueInput={setPassword} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
             <LabelPrimary>Mon nouveau mot de passe</LabelPrimary>
             <InputFull type='password' value={newPassword} placeholder={'Taper votre nouveau mot de passe'} setValueInput={setNewPassword} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
-            <Btn click={() => Store.user.useResetPassword()}>Valider</Btn>
+            <Btn click={() => Store.user.useResetPassword}>Valider</Btn>
         </article>
       </section>
       </div>

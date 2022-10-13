@@ -1,3 +1,4 @@
+import { IPicture } from '@types-app/models/picture.type'
 import { Iuser } from '@types-app/models/user.model'
 import { BehaviorSubject } from 'rxjs'
 
@@ -41,4 +42,9 @@ export const userStore = {
    * loader for reset Password request
    */
   resetPasswordLoading$: new BehaviorSubject(false),
+
+  /**
+   * update picture user
+   */
+   updatePicture$: new BehaviorSubject({} as IPicture),
 }
