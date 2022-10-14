@@ -167,7 +167,18 @@ export const userService = {
     userStore.resetPasswordLoading$.next(true)
   },
 
-  updatePicture: (picture: IPicture) => {
-    userStore.updatePicture$.next({ ...picture })
+  updatePicture: async (picture: FormData) => {
+    try {
+      const res = await http.post(Eroute.UPLOAD_PICTURE, picture)
+      console.log(res)
+    } catch (error) {
+      AppService.errorMessage(
+        userStore.resetPasswordError$,
+        error,
+        Eerror.FORGOT_PASSWORD,
+      )
+      userStore.resetPasswordLoading$.next(false)
+      return false
+    }
   },
 }

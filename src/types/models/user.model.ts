@@ -1,3 +1,4 @@
+import { IPicture } from './picture.type'
 import { Irole } from './role.model'
 
 /**
@@ -7,7 +8,7 @@ export interface Iuser {
   id?: number
   name?: string
   email?: string
-  avatar?: string
+  picture?: IPicture
   email_verified_at?: string
   role?: Irole
 }

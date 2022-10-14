@@ -1,32 +1,45 @@
 import { LinkPrimary } from '@atoms/links/link-primary/link-primary'
 import { BtnUploadPicture } from '@molecules/btns/btn-upload-picture'
+import { FormUploadAvatar } from '@molecules/forms/form-upload-avatar/form-upload-avatar'
 import { Store } from '@store/store'
 import React from 'react'
 import users from '../../../assets/user-profil.jpg'
 import './menu-side-left-profil.css'
 
 export function SectionMenuSideLeftProfil() {
-    const user = Store.user.useUserCurrent()
+  const user = Store.user.useUserCurrent()
 
-return (
+  return (
     <nav className='menu-side-left-profil'>
+      {JSON.stringify(user.picture?.picture_url)}
       <ul>
-        {
-        user.avatar
-        ? <img src={user.avatar} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
-        : <img src={users} alt='presentation avatar user' className='w-56 h-52 p-8 rounded-full' />
-        }
-        <BtnUploadPicture addClass='ml-5'>Ajouter ma photo</BtnUploadPicture>
+        {/* display avatar */}
+        <div className='flex justify-center items-center w-fit mx-auto my-12 relative'>
+          <img
+            className='w-28 h-28 rounded-full'
+            src={`${
+              user.picture
+                ? `http://localhost:8000/${user.picture.picture_url}`
+                : 'https://ui-avatars.com/api/?background=0D8ABC&color=fff'
+            }`}
+          />
+          {/* form avatar */}
+          <FormUploadAvatar />
+        </div>
         <li className='mt-4'>
           <LinkPrimary link='/user/profil'>Mes informations</LinkPrimary>
         </li>
         <li>
-          <LinkPrimary link='/user/profil/update'>Modifier mon compte</LinkPrimary>
+          <LinkPrimary link='/user/profil/update'>
+            Modifier mon compte
+          </LinkPrimary>
         </li>
         <li>
-          <LinkPrimary link='/user/profil/update/password'>Modifier mot de passe</LinkPrimary>
+          <LinkPrimary link='/user/profil/update/password'>
+            Modifier mot de passe
+          </LinkPrimary>
         </li>
       </ul>
     </nav>
-    )
+  )
 }

@@ -13,4 +13,7 @@ export enum Eroute {
 
   // house
   GET_ALL_HOUSE = 'houses',
+
+  // user
+  UPLOAD_PICTURE = 'user/upload/avatar',
 }

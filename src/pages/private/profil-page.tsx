@@ -14,16 +14,16 @@ function ProfilPage() {
     <main>
       <TitlePagePrivate>Mon compte</TitlePagePrivate>
       <div className='flex mt-8'>
-      <SectionMenuSideLeftProfil />
-      <section className='w-full px-8'>
-        <TitleState>Mes informations</TitleState>
-        <article className=' border-2 border-black w-fit p-6 mt-12 rounded-lg'>
+        <SectionMenuSideLeftProfil />
+        <section className='w-full px-8'>
+          <TitleState>Mes informations</TitleState>
+          <article className=' border-2 border-black w-fit p-6 mt-12 rounded-lg'>
             <LabelPrimary>Nom: </LabelPrimary>
-            <InputFull placeholder='' value={user.name} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4'></InputFull>
+            {/* <InputFull placeholder='' value={user.name} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4'></InputFull> */}
             <LabelPrimary>Email: </LabelPrimary>
-            <InputFull placeholder='' value={user.email} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards'></InputFull>
-        </article>
-      </section>
+            {/*  <InputFull placeholder='' value={user.email} setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards'></InputFull> */}
+          </article>
+        </section>
       </div>
     </main>
   )

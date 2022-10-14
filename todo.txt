@@ -1,0 +1,13 @@
+// image
+
+- upload image
+=> input avatar
+=> sub
+=> add user in store
+
+- modifier l'image
+    => supprimer l'image
+
+// info
+
+// password

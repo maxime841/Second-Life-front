@@ -15,16 +15,20 @@ function BtnIconMenuBurgerOffice({ addClass }: TBtnMenuBurger) {
   return (
     <div className={`p-4 relative display sm:flex md:hidden ${addClass}`}>
       {/* btn dropdown */}
-      <Btn click={() => Store.menuBurger.toggleStateMenuBurgerOffice(menuBurgerOffice)}>
-        <MenuBurgerIcon size='w-4 h-4'/>
+      <Btn
+        bg=''
+        click={() =>
+          Store.menuBurger.toggleStateMenuBurgerOffice(menuBurgerOffice)
+        }>
+        <MenuBurgerIcon color='bg-white' size='w-4 h-4' />
       </Btn>
 
       {/* menu burger */}
       {menuBurgerOffice ? (
         <ul
-          className='flex-col items-center justify-around display sm:flex md:invisible absolute top-16 left-4 w-32
-            p-2 bg-fond_color_button
-            rounded-lg z-10'>
+          className={`flex-col items-center justify-around display sm:flex md:invisible absolute top-16 left-4 w-32
+          p-2 bg-fond_color_button
+          rounded-lg z-10`}>
           {/* link dashboard */}
           <li>
             <LinkBtn link='/dashboard'>

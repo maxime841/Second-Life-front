@@ -55,7 +55,8 @@ export interface TbtnCardLand {
   addClass?: string
 }
 
-export type TbtnUploadPicture = TBtn & TComponentParent & {
-  picture?: IPicture
-  addClass?: string
-}
+export type TbtnUploadPicture = TBtn &
+  TComponentParent & {
+    picture?: IPicture
+    addClass?: string
+  }

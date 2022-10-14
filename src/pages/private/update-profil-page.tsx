@@ -11,29 +11,39 @@ import userEvent from '@testing-library/user-event'
 import React, { useState } from 'react'
 
 function ProfilUpdatePage() {
-    const user = Store.user.useUserCurrent()
-    const updatePswd = Store.user.useResetPassword()
-    console.log('updatePswd', updatePswd)
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
+  const user = Store.user.useUserCurrent()
+  const updatePswd = Store.user.useResetPassword()
+  console.log('updatePswd', updatePswd)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
   return (
     <main>
       <TitlePagePrivate>Mon compte</TitlePagePrivate>
       <div className='flex mt-8'>
-      <SectionMenuSideLeftProfil />
-      <section className='w-full px-8 border-2 border-black w-fit p-6 mt-12 ml-12 rounded-lg'>
-        <TitleState>Modifier mon compte</TitleState>
-       <LabelPrimary>Mon ancien Nom: </LabelPrimary>
-       <InputFull placeholder='' value={user.name } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
-       <LabelPrimary>Mon nouveau Nom: </LabelPrimary>
-       <InputFull placeholder='' value={name} setValueInput={setName} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
-       <LabelPrimary>Mon ancien Email: </LabelPrimary>
-       <InputFull placeholder='' value={user.email } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
-       <LabelPrimary>Mon nouveau Email: </LabelPrimary>
-       <InputFull placeholder='' value={email} setValueInput={setEmail} addClass='bg-input_color dark:bg-fond-dark-cards mb-12' />
-       <Btn>Sauvegarder</Btn>
-       </section>
+        <SectionMenuSideLeftProfil />
+        <section className='w-full px-8 border-2 border-black w-fit p-6 mt-12 ml-12 rounded-lg'>
+          <TitleState>Modifier mon compte</TitleState>
+          <LabelPrimary>Mon ancien Nom: </LabelPrimary>
+          {/*  <InputFull placeholder='' value={user.name } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' /> */}
+          <LabelPrimary>Mon nouveau Nom: </LabelPrimary>
+          <InputFull
+            placeholder=''
+            value={name}
+            setValueInput={setName}
+            addClass='bg-input_color dark:bg-fond-dark-cards mb-12'
+          />
+          <LabelPrimary>Mon ancien Email: </LabelPrimary>
+          {/*  <InputFull placeholder='' value={user.email } setValueInput={undefined} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' /> */}
+          <LabelPrimary>Mon nouveau Email: </LabelPrimary>
+          <InputFull
+            placeholder=''
+            value={email}
+            setValueInput={setEmail}
+            addClass='bg-input_color dark:bg-fond-dark-cards mb-12'
+          />
+          <Btn>Sauvegarder</Btn>
+        </section>
       </div>
     </main>
   )
