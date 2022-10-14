@@ -3,7 +3,6 @@ import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { TitlePagePrivate } from '@atoms/title/title-page-private/title-page-private'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
 import InputFull from '@molecules/inputs/input-full'
-import { SectionMenuSideLeftProfil } from '@organisms/section-menu-side-left-profil/menu-side-left-profil'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
 
@@ -16,7 +15,6 @@ function ProfilUpdatePasswordPage() {
     <main>
       <TitlePagePrivate>Mon compte</TitlePagePrivate>
       <div className='flex mt-8'>
-        <SectionMenuSideLeftProfil />
         <section className='w-full px-8 border-2 border-black w-fit p-6 mt-12 ml-12 rounded-lg'>
           <TitleState>Modifier mon mot de passe</TitleState>
           <article>

@@ -12,12 +12,13 @@ export function FormUploadAvatar() {
   }
 
   return (
-    <form className='absolute -right-0 -bottom-0'>
+    <form className='mx-auto'>
       {/* input file */}
-      <label className='relative'>
+      <label className=''>
         <div className='p-2 rounded-full bg-gray-100 w-fit'>
           <PencilIcon size='w-4 h-4' />
         </div>
+         {/* btn sub */}
         <input
           className='hidden'
           type='file'
@@ -25,7 +26,6 @@ export function FormUploadAvatar() {
           required
         />
       </label>
-      {/* btn sub */}
     </form>
   )
 }
