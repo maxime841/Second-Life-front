@@ -1,5 +1,7 @@
 import { Btn } from '@atoms/btns/btn'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
+import { TitlePagePrivate } from '@atoms/title/title-page-private/title-page-private'
+import { TitleState } from '@atoms/title/title-stat/title-stat'
 import InputFull from '@molecules/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
@@ -8,7 +10,8 @@ import { TvoletDetailUser } from './volet-detail-profil-update.type'
 export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
   const user = Store.user.useUserCurrent()
   const [openMoreProfilUpdate, setOpenMoreProfilUpdate] = useState(false)
-  const [value, setValue] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
   const handlerClickOpenDetailProfilUpdate = () => {
     setOpenMoreProfilUpdate(!openMoreProfilUpdate)
@@ -24,14 +27,31 @@ export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
       {openMoreProfilUpdate ? (
         <div className='px-2 md:px-8 mt-8'>
           {/* modification profil */}
-          <div>
-            <h4 className='font-bold text-lg md:text-2xl mb-2'>
-              Modification du profil
-            </h4>
-            <LabelPrimary>Nom: </LabelPrimary>
-            <InputFull value={value} placeholder={''} setValueInput={setValue}></InputFull>
-          </div>
+      <div className='flex mt-8'>
+        <div className='px-2 border-2 border-black w-fit p-6 mt-6 mx-2 rounded-lg'>
+          <TitleState>Modifier mon compte</TitleState>
+          <LabelPrimary>Mon pseudo: </LabelPrimary>
+          <InputFull placeholder='' value={user.name} setValueInput={setName} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
+          <LabelPrimary>Mon nouveau pseudo: </LabelPrimary>
+          <InputFull
+            placeholder=''
+            value={name}
+            setValueInput={setName}
+            addClass='bg-input_color dark:bg-fond-dark-cards mb-12'
+          />
+          <LabelPrimary>Mon Email: </LabelPrimary>
+          <InputFull placeholder='' value={user.email} setValueInput={setEmail} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
+          <LabelPrimary>Mon nouveau Email: </LabelPrimary>
+          <InputFull
+            placeholder=''
+            value={email}
+            setValueInput={setEmail}
+            addClass='bg-input_color dark:bg-fond-dark-cards mb-12'
+          />
+          <Btn>Sauvegarder</Btn>
         </div>
+      </div>
+      </div>
       )
       : null}
     </section>

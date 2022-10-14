@@ -1,5 +1,6 @@
 import { Btn } from '@atoms/btns/btn'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
+import { TitleState } from '@atoms/title/title-stat/title-stat'
 import InputFull from '@molecules/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
@@ -21,13 +22,12 @@ export function VoletDetailProfilDelete({ userCurrent }: TvoletDetailUser) {
         </Btn>
         {/* detail profil update */}
       {openMoreProfilDelete ? (
-        <div className='px-2 md:px-8 mt-8'>
+        <div className='px-2 border-2 border-black w-fit p-6 mt-6 mx-2 rounded-lg'>
           {/* modification profil */}
           <div>
-            <h4 className='font-bold text-lg md:text-2xl mb-2'>
-              Suppression du profil
-            </h4>
-            <LabelPrimary>Nom: </LabelPrimary>
+            <TitleState>Supprimer le profil</TitleState>
+            <LabelPrimary>Suppresion du profil ?: </LabelPrimary>
+            <Btn>Confirmer</Btn>
             <InputFull value={value} placeholder={''} setValueInput={setValue}></InputFull>
           </div>
         </div>

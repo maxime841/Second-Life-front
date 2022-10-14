@@ -21,8 +21,6 @@ import { DjPageOffice } from './private/dj-page'
 import { DancerPageOffice } from './private/dancer-page'
 import { UserPageOffice } from './private/user-page'
 import ProfilPage from './private/profil-page'
-import ProfilUpdatePage from './private/update-profil-page'
-import ProfilUpdatePasswordPage from './private/update-password-profil-page'
 
 function App() {
   const navigate = useNavigate()
@@ -56,8 +54,6 @@ function App() {
           <Route path='/dancers' element={<DancerPageOffice />} />
           <Route path='/users' element={<UserPageOffice />} />
           <Route path='/user/profil' element={<ProfilPage />} />
-          <Route path='/user/profil/update' element={<ProfilUpdatePage />} />
-          <Route path='/user/profil/update/password' element={<ProfilUpdatePasswordPage />} />
         </Route>
       </Route>
     </Routes>

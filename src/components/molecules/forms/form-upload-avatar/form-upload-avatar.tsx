@@ -12,7 +12,7 @@ export function FormUploadAvatar() {
   }
 
   return (
-    <form className='mx-auto'>
+    <form className='absolute sm:ml-52 -mt-16 lg:ml-[355px]'>
       {/* input file */}
       <label className=''>
         <div className='p-2 rounded-full bg-gray-100 w-fit'>
