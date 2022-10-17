@@ -1,4 +1,3 @@
-import { Btn } from '@atoms/btns/btn'
 import { ContainerPrimary } from '@atoms/containers/container-primary/container-primary'
 import { EmodelContainer } from '@atoms/containers/container-primary/container-primary.type'
 import { VoletDetailClub } from '@molecules/volet-detail-club/volet-detail-club'

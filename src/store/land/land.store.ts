@@ -1,5 +1,5 @@
 import { BehaviorSubject } from 'rxjs'
-import { ILand } from '@types-app/land.type'
+import { ILand } from '@types-app/models/land.type'
 
 export const LandStore = {
   /**

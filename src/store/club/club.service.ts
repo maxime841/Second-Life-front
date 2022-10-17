@@ -1,5 +1,5 @@
 import { http } from '@config-app/http/http.instance'
-import { IClubsResponse, IClubResponse } from '@types-app/club.type'
+import { IClubsResponse, IClubResponse } from '@types-app/models/club.type'
 import { ClubStore } from './club.store'
 
 export const ClubService = {

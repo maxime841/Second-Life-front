@@ -1,6 +1,5 @@
 import { ContainerPrimary } from '@atoms/containers/container-primary/container-primary'
 import { EmodelContainer } from '@atoms/containers/container-primary/container-primary.type'
-import BtnCardLand from '@molecules/btns/btn-card-land'
 import { VoletDetailLand } from '@molecules/volet-detail-land/volet-detail-land'
 import { Store } from '@store/store'
 import React from 'react'

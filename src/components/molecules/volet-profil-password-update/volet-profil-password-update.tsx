@@ -1,13 +1,12 @@
 import { Btn } from '@atoms/btns/btn'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
-import InputFull from '@atoms/inputs/input-full'
+import { InputFull } from '@atoms/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
 import { TvoletDetailUser } from './volet-profil-password-update.type'
 
 export function VoletDetailProfilPasswordUpdate({ userCurrent }: TvoletDetailUser) {
-  const user = Store.user.useUserCurrent()
   const [openMorePasswordUpdate, setOpenMorePasswordUpdate] = useState(false)
   const [password, setPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')

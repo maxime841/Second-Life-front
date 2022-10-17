@@ -1,8 +1,7 @@
 import { Btn } from '@atoms/btns/btn'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
-import { TitlePagePrivate } from '@atoms/title/title-page-private/title-page-private'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
-import InputFull from '@atoms/inputs/input-full'
+import { InputFull } from '@atoms/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
 import { TvoletDetailUser } from './volet-detail-profil-update.type'
@@ -10,9 +9,9 @@ import { TvoletDetailUser } from './volet-detail-profil-update.type'
 export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
   const user = Store.user.useUserCurrent()
   const [openMoreProfilUpdate, setOpenMoreProfilUpdate] = useState(false)
-  const [name, setName] = useState('')
+  const [setName] = useState('')
   const [newName, setNewName] = useState('')
-  const [email, setEmail] = useState('')
+  const [setEmail] = useState('')
   const [newEmail, setNewEmail] = useState('')
 
   const handlerClickOpenDetailProfilUpdate = () => {

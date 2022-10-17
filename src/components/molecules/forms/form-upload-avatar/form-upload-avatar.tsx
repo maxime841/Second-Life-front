@@ -1,4 +1,3 @@
-import { Btn } from '@atoms/btns/btn'
 import { PencilIcon } from '@atoms/icons/pencil-icon'
 import { Store } from '@store/store'
 import React from 'react'

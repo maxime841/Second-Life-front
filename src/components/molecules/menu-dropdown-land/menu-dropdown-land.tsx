@@ -4,7 +4,7 @@ import LinkText from '@atoms/links/link-text'
 import { Store } from '@store/store'
 import { TMenuDropdownLand } from '@types-app/menu.type'
 import React from 'react'
-import { ILand } from '@types-app/land.type'
+import { ILand } from '@types-app/models/land.type'
 
 function MenuDropdownLand({ children, addClass }: TMenuDropdownLand) {
   const open = Store.app.useStateMenuDropdownLand()

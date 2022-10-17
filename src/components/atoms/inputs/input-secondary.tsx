@@ -47,23 +47,23 @@ export function InputSecondary({
       placeholder={placeholder}
       required={required}
       className={`
-        ${classDefault ?? 'block w-full '} 
-        ${addClass ?? ''} 
+        ${classDefault ?? 'block w-full '}
+        ${addClass ?? ''}
         ${
           border ??
           `
-        outline-none border-2 border-transparent 
+        outline-none border-2 border-transparent
         focus:border-2 focus:border-action
         `
-        } 
-        ${radius ?? 'rounded-lg'} 
-        ${padding ?? 'py-2 pl-4 pr-4'} 
+        }
+        ${radius ?? 'rounded-lg'}
+        ${padding ?? 'py-2 pl-4 pr-4'}
         ${
           colors ??
           `
-          bg-fond_claire 
+          bg-fond_claire
           dark:bg-fond_dark
-          text-input-color-text 
+          text-input-color-text
           dark:text-input-dark-color-text`
         }
         ${textSize ?? 'text-input-size-text'}

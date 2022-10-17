@@ -1,5 +1,5 @@
 import { Store } from '@store/store'
-import { ILand } from '@types-app/land.type'
+import { ILand } from '@types-app/models/land.type'
 import { useEffect, useState } from 'react'
 import { map, pipe } from 'rxjs'
 import { LandService } from './land.service'

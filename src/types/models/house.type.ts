@@ -1,4 +1,4 @@
-import { IPicture } from './models/picture.type'
+import { IPicture } from './picture.type'
 
 /**
  * type for all houses

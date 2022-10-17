@@ -1,7 +1,7 @@
-import { Idancer } from './models/dancer.type'
-import { Idj } from './models/dj.type'
-import { IParties } from './models/parties.type'
-import { IPicture } from './models/picture.type'
+import { Idancer } from './dancer.type'
+import { Idj } from './dj.type'
+import { IParties } from './parties.type'
+import { IPicture } from './picture.type'
 
 /**
  * type for all clubs

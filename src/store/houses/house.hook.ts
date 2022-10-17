@@ -1,5 +1,5 @@
 import { Store } from '@store/store'
-import { IHouse } from '@types-app/house.type'
+import { IHouse } from '@types-app/models/house.type'
 import { useEffect, useState } from 'react'
 import { map, max } from 'rxjs'
 import { HouseService } from './house.service'

@@ -1,6 +1,6 @@
 import { http } from '@config-app/http/http.instance'
 import { Store } from '@store/store'
-import { IHouseResponse, IHousesResponse } from '@types-app/house.type'
+import { IHouseResponse, IHousesResponse } from '@types-app/models/house.type'
 import { Eroute } from '@types-app/route.type'
 import { HouseStore } from './houses.store'
 

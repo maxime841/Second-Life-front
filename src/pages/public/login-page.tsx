@@ -1,5 +1,4 @@
 import Title from '@atoms/title/title'
-import { FormLogin } from '@molecules/forms/form-login'
 import SectionLogin from '@organisms/section-login/section-login'
 import React from 'react'
 

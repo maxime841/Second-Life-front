@@ -28,7 +28,7 @@ import React, { useState } from 'react'
  * @param icon?: JSX.Element | JSX.Element[],
  * @returns
  */
-function InputFull({
+export function InputFull({
   id,
   name,
   value,
@@ -130,5 +130,3 @@ function InputFull({
     </div>
   )
 }
-
-export default InputFull

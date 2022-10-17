@@ -1,5 +1,5 @@
 import { BehaviorSubject } from 'rxjs'
-import { IHouse } from '@types-app/house.type'
+import { IHouse } from '@types-app/models/house.type'
 
 export const HouseStore = {
   /**

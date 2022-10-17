@@ -1,4 +1,4 @@
-import { IHouse } from '@types-app/house.type'
+import { IHouse } from '@types-app/models/house.type'
 
 export type TvoletDetailLand = {
   houseCurrent: IHouse

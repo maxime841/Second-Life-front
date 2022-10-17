@@ -1,4 +1,4 @@
-import { IClub } from '@types-app/club.type'
+import { IClub } from '@types-app/models/club.type'
 import { useEffect, useState } from 'react'
 import { map } from 'rxjs'
 import { ClubService } from './club.service'

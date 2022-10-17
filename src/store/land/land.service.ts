@@ -1,5 +1,5 @@
 import { http } from '@config-app/http/http.instance'
-import { ILandsResponse, ILandResponse } from '@types-app/land.type'
+import { ILandsResponse, ILandResponse } from '@types-app/models/land.type'
 import { LandStore } from './land.store'
 
 export const LandService = {

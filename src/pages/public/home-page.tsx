@@ -1,6 +1,4 @@
-import Paragraph from '@atoms/texts/paragraph'
 import Image from '@atoms/images/image'
-import logoSL from '../../assets/second life.png'
 import valombreuse from '../../assets/domaine projet.jpg'
 import club from '../../assets/Photo club.jpg'
 import React, { useState } from 'react'

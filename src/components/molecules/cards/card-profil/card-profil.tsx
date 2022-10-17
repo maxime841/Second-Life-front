@@ -1,7 +1,7 @@
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
 import { FormUploadAvatar } from '@molecules/forms/form-upload-avatar/form-upload-avatar'
-import InputFull from '@atoms/inputs/input-full'
+import { InputFull } from '@atoms/inputs/input-full'
 import { VoletDetailProfilUpdate } from '@molecules/volet-detail-profil-update/volet-detail-profil-update'
 import { VoletDetailProfilDelete } from '@molecules/volet-profil-delete/volet-profil-delete'
 import { VoletDetailProfilPasswordUpdate } from '@molecules/volet-profil-password-update/volet-profil-password-update'
@@ -9,9 +9,9 @@ import { Store } from '@store/store'
 import React, { useState } from 'react'
 
 export function CardProfil() {
-  const [name, setName] = useState('')
+  const [pseudo, setPseudo] = useState('')
   const [email, setEmail] = useState('')
-    const user = Store.user.useUserCurrent()
+  const user = Store.user.useUserCurrent()
     return (
 <article className='width sm:w-96 md:w-[400px] lg:w-[700px] mx-auto mt-12 border-2 border-black p-4 rounded-lg'>
           <TitleState addClass='sm:text-2xl md:text-3xl lg:text-4xl'>Mes informations</TitleState>
@@ -29,9 +29,9 @@ export function CardProfil() {
               <FormUploadAvatar />
               <article className='mx-auto border-2 border-black rounded-lg w-fit p-8'>
               <LabelPrimary>Pseudo: </LabelPrimary>
-              <InputFull addClass='w-fit text-center mb-4' colors='bg-fond-cards' value={user.name} placeholder={''} setValueInput={setName}></InputFull>
+              {/* <InputFull addClass='w-fit text-center mb-4' colors='bg-fond-cards' value={user.name} placeholder={''} setValueInput={setPseudo} /> */}
               <LabelPrimary>Email: </LabelPrimary>
-              <InputFull addClass='w-fit text-center' colors='bg-fond-cards' value={user.email} placeholder={''} setValueInput={setEmail}></InputFull>
+              {/* <InputFull addClass='w-fit text-center' colors='bg-fond-cards' value={user.email} placeholder={''} setValueInput={setEmail} /> */}
               </article>
             </div>
             <nav className='flex'>

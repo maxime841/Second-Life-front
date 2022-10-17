@@ -1,4 +1,4 @@
-import { IClub } from '@types-app/club.type'
+import { IClub } from '@types-app/models/club.type'
 
 /**
  * type of component volet detail club

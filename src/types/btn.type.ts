@@ -1,6 +1,6 @@
 import { TComponentParent } from './component-parent.type'
-import { IClub } from './club.type'
-import { ILand } from './land.type'
+import { IClub } from './models/club.type'
+import { ILand } from './models/land.type'
 import { IPicture } from './models/picture.type'
 
 /**
