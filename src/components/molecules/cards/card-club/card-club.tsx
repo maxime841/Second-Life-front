@@ -3,7 +3,7 @@ import { ContainerPrimary } from '@atoms/containers/container-primary/container-
 import { EmodelContainer } from '@atoms/containers/container-primary/container-primary.type'
 import { VoletDetailClub } from '@molecules/volet-detail-club/volet-detail-club'
 import { Store } from '@store/store'
-import React, { useState } from 'react'
+import React from 'react'
 
 export function CardClub() {
   const clubs = Store.club.useClubs()

@@ -1,7 +1,7 @@
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
 import { FormUploadAvatar } from '@molecules/forms/form-upload-avatar/form-upload-avatar'
-import InputFull from '@molecules/inputs/input-full'
+import InputFull from '@atoms/inputs/input-full'
 import { VoletDetailProfilUpdate } from '@molecules/volet-detail-profil-update/volet-detail-profil-update'
 import { VoletDetailProfilDelete } from '@molecules/volet-profil-delete/volet-profil-delete'
 import { VoletDetailProfilPasswordUpdate } from '@molecules/volet-profil-password-update/volet-profil-password-update'

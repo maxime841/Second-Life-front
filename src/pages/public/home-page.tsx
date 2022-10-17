@@ -3,12 +3,13 @@ import Image from '@atoms/images/image'
 import logoSL from '../../assets/second life.png'
 import valombreuse from '../../assets/domaine projet.jpg'
 import club from '../../assets/Photo club.jpg'
-import React from 'react'
+import React, { useState } from 'react'
 import SearchBar from '@molecules/inputs/search-bar'
 import { ContainerPrimary } from '@atoms/containers/container-primary/container-primary'
 import { EmodelContainer } from '@atoms/containers/container-primary/container-primary.type'
 
 function HomePage() {
+  const [search, setSearch] = useState('')
   return (
     <section>
       {/* search bar */}
@@ -17,9 +18,9 @@ function HomePage() {
         model={EmodelContainer.fit}>
         <SearchBar
           addClass='flex'
-          value=''
+          value={search}
           placeholder=''
-          setValueInput={undefined}>
+          setValueInput={setSearch}>
           <span>Barre de recherche</span>
         </SearchBar>
       </ContainerPrimary>

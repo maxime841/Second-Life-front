@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchBar from '@molecules/inputs/search-bar'
 import MenuPrimary from '@molecules/menu-primary/menu-primary'
 import MenuTool from '@molecules/menu-tool/menu-tool'
 import BtnIconMenuBurger from '@molecules/btns/btn-burger'
 
 function Header() {
+  const [search, setSearch] = useState('')
   return (
     <header
       className='
@@ -21,9 +22,9 @@ function Header() {
       {/* search bar */}
       <SearchBar
         addClass='hidden sm:flex ml-2'
-        value=''
+        value={search}
         placeholder=''
-        setValueInput={undefined}>
+        setValueInput={setSearch}>
         <span>Barre de recherche</span>
       </SearchBar>
 

@@ -1,6 +1,6 @@
 import { Btn } from '@atoms/btns/btn'
 import { ErrorText } from '@atoms/errors/error-text'
-import InputFull from '@molecules/inputs/input-full'
+import InputFull from '@atoms/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
 
