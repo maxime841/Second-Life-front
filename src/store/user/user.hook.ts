@@ -163,7 +163,7 @@ export const userHook = {
    * hook fordelete profil
    * @returns profil
    */
-   useDeleteProfil: (id: string) => {
+   useDeleteProfil: (profil: Iuser) => {
     const [error, setError] = useState('')
     const [deleteProfil, setDeleteProfil] = useState({} as Iuser)
 
@@ -174,13 +174,13 @@ export const userHook = {
       }
 
       async function deleteProfil() {
-        await userService.deleteProfil(id)
+        await userService.deleteProfil(profil)
       }
       userStore.deleteProfilError$.subscribe(value => setError(value))
       userStore.deleteProfil$.subscribe(value => setDeleteProfil(value))
       cleanError()
       deleteProfil()
-    }, [id])
+    }, [profil])
 
     return { error, deleteProfil }
   },

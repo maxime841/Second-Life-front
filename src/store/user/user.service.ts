@@ -203,9 +203,9 @@ export const userService = {
     }
   },
 
-  deleteProfil: async (id: string) => {
+  deleteProfil: async (profil: Iuser) => {
     try {
-      const res = await http.post(Eroute.DELETE_PROFIL, id)
+      const res = await http.post(Eroute.DELETE_PROFIL, profil)
       console.log(res)
     } catch (error) {
       AppService.errorMessage(
