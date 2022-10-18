@@ -3,19 +3,30 @@ import { ErrorText } from '@atoms/errors/error-text'
 import { InputFull } from '@atoms/inputs/input-full'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { Store } from '@store/store'
+import { Iuser } from '@types-app/models/user.model'
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-export function FormUpdateProfil() {
+export function FormUpdateProfil(profil: Iuser) {
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [newName, setNewName] = useState('')
   const [email, setEmail] = useState('')
   const [newEmail, setNewEmail] = useState('')
   const { error } = Store.user.useUpdateProfil()
 
-    const handlerOnSubUpdateProfil = async (e: any) => {
+    const handlerOnSubUpdateProfil = async (e: React.FormEvent) => {
       e.preventDefault()
-      Store.user.updateProfil(FormData)
+      Store.user.updateProfil(profil)
+      const res = await Store.user.updateProfil({
+        name: name!,
+        newName: newName!,
+        email: email!,
+        newEmail: newEmail!,
+      })
+      if (res) {
+        navigate('/login')
+      }
     }
 
   return (
