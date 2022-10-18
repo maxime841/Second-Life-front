@@ -1,6 +1,7 @@
 import { Btn } from '@atoms/btns/btn'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
+import { FormDeleteProfil } from '@molecules/forms/form-delete-profil/form-delete-profil'
 import React, { useState } from 'react'
 import { TvoletDetailUser } from './volet-profil-delete.type'
 
@@ -22,8 +23,7 @@ export function VoletDetailProfilDelete({ userCurrent }: TvoletDetailUser) {
           {/* modification profil */}
           <div>
             <TitleState>Supprimer le profil</TitleState>
-            <LabelPrimary>Suppresion du profil ?: </LabelPrimary>
-            <Btn>Confirmer</Btn>
+            <FormDeleteProfil />
           </div>
         </div>
       )

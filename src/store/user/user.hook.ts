@@ -158,4 +158,30 @@ export const userHook = {
 
     return { error, profil }
   },
+
+  /**
+   * hook fordelete profil
+   * @returns profil
+   */
+   useDeleteProfil: (id: string) => {
+    const [error, setError] = useState('')
+    const [deleteProfil, setDeleteProfil] = useState({} as Iuser)
+
+    useEffect(() => {
+      // reset error didmountcomponent
+      function cleanError() {
+        userService.resetError()
+      }
+
+      async function deleteProfil() {
+        await userService.deleteProfil(id)
+      }
+      userStore.deleteProfilError$.subscribe(value => setError(value))
+      userStore.deleteProfil$.subscribe(value => setDeleteProfil(value))
+      cleanError()
+      deleteProfil()
+    }, [id])
+
+    return { error, deleteProfil }
+  },
 }

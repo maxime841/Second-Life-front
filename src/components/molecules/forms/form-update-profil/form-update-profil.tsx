@@ -4,13 +4,14 @@ import { InputFull } from '@atoms/inputs/input-full'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 export function FormUpdateProfil() {
   const [name, setName] = useState('')
   const [newName, setNewName] = useState('')
   const [email, setEmail] = useState('')
   const [newEmail, setNewEmail] = useState('')
-  const { error } = Store.user.useForgotPasswordError()
+  const { error } = Store.user.useUpdateProfil()
 
     const handlerOnSubUpdateProfil = async (e: any) => {
       e.preventDefault()
@@ -18,7 +19,7 @@ export function FormUpdateProfil() {
     }
 
   return (
-    <form>
+    <form onSubmit={handlerOnSubUpdateProfil}>
       <LabelPrimary>Pseudo: </LabelPrimary>
       {/* input name */}
       <InputFull

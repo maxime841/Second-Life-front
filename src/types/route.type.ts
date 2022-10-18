@@ -17,4 +17,5 @@ export enum Eroute {
   // user
   UPLOAD_PICTURE = 'user/upload/avatar',
   UPLOAD_PROFIL = 'user/profil/update',
+  DELETE_PROFIL = 'user/delete/{id}'
 }

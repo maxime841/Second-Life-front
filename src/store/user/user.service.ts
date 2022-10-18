@@ -202,4 +202,19 @@ export const userService = {
       return false
     }
   },
+
+  deleteProfil: async (id: string) => {
+    try {
+      const res = await http.post(Eroute.DELETE_PROFIL, id)
+      console.log(res)
+    } catch (error) {
+      AppService.errorMessage(
+        userStore.resetPasswordError$,
+        error,
+        Eerror.FORGOT_PASSWORD,
+      )
+      userStore.resetPasswordLoading$.next(false)
+      return false
+    }
+  },
 }
