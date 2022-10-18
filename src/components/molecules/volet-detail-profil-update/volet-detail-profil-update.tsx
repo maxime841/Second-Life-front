@@ -9,9 +9,9 @@ import { TvoletDetailUser } from './volet-detail-profil-update.type'
 export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
   const user = Store.user.useUserCurrent()
   const [openMoreProfilUpdate, setOpenMoreProfilUpdate] = useState(false)
-  const [setName] = useState('')
+  const [name, setName] = useState('')
   const [newName, setNewName] = useState('')
-  const [setEmail] = useState('')
+  const [email, setEmail] = useState('')
   const [newEmail, setNewEmail] = useState('')
 
   const handlerClickOpenDetailProfilUpdate = () => {
@@ -32,7 +32,7 @@ export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
         <div className='px-2 border-2 border-black w-fit p-6 mt-6 mx-2 rounded-lg'>
           <TitleState>Modifier mon compte</TitleState>
           <LabelPrimary>Mon pseudo: </LabelPrimary>
-          <InputFull placeholder='' value={user.name} setValueInput={setName} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
+          <InputFull placeholder='' value={name} setValueInput={setName} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
           <LabelPrimary>Mon nouveau pseudo: </LabelPrimary>
           <InputFull
             placeholder=''
@@ -41,7 +41,7 @@ export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
             addClass='bg-input_color dark:bg-fond-dark-cards mb-12'
           />
           <LabelPrimary>Mon Email: </LabelPrimary>
-          <InputFull placeholder='' value={user.email} setValueInput={setEmail} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
+          <InputFull placeholder='' value={email} setValueInput={setEmail} addClass='bg-input_color dark:bg-fond-dark-cards mb-4' />
           <LabelPrimary>Mon nouveau Email: </LabelPrimary>
           <InputFull
             placeholder=''

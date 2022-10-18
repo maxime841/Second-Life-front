@@ -7,21 +7,25 @@ import { VoletDetailProfilDelete } from '@molecules/volet-profil-delete/volet-pr
 import { VoletDetailProfilPasswordUpdate } from '@molecules/volet-profil-password-update/volet-profil-password-update'
 import { Store } from '@store/store'
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 export function CardProfil() {
-  const [pseudo, setPseudo] = useState('')
-  const [email, setEmail] = useState('')
+  /* const [pseudo, setPseudo] = useState('')
+  const [email, setEmail] = useState('') */
   const user = Store.user.useUserCurrent()
+  console.log('ma photo', user.picture?.picture_url)
+  console.log('ma photo url', `http://127.0.0.1:8000/${user?.picture?.picture_url}`)
+
     return (
-<article className='width sm:w-96 md:w-[400px] lg:w-[700px] mx-auto mt-12 border-2 border-black p-4 rounded-lg'>
+<article className='bg-fond-cards dark:bg-fond-dark-cards width sm:w-96 md:w-[400px] lg:w-[700px] mx-auto mt-12 border-2 border-black p-4 rounded-lg'>
           <TitleState addClass='sm:text-2xl md:text-3xl lg:text-4xl'>Mes informations</TitleState>
                 {/* display avatar */}
             <div className='my-16'>
               <img
-                className='w-28 h-28 rounded-full mx-auto my-8'
+                className='w-28 h-28 rounded-full mx-auto my-8 z-10'
                 src={`${
                  user.picture
-                  ? `http://localhost:8000/${user.picture.picture_url}`
+                  ? `http://127.0.0.1:8000/${user.picture.picture_url}`
                   : 'https://ui-avatars.com/api/?background=0D8ABC&color=fff'
                 }`}
                 />
