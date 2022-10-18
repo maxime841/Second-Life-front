@@ -4,67 +4,50 @@ import { InputFull } from '@atoms/inputs/input-full'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { Store } from '@store/store'
 import { Iuser } from '@types-app/models/user.model'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export function FormUpdateProfil(profil: Iuser) {
   const navigate = useNavigate()
-  const [name, setName] = useState('')
-  const [newName, setNewName] = useState('')
-  const [email, setEmail] = useState('')
-  const [newEmail, setNewEmail] = useState('')
+  const userCurrent = Store.user.useUserCurrent()
   const { error } = Store.user.useUpdateProfil()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
-    const handlerOnSubUpdateProfil = async (e: React.FormEvent) => {
-      e.preventDefault()
-      Store.user.updateProfil(profil)
-      const res = await Store.user.updateProfil({
-        name: name!,
-        newName: newName!,
-        email: email!,
-        newEmail: newEmail!,
-      })
-      if (res) {
-        navigate('/user/profil')
-      }
+  useEffect(() => {
+    setName(userCurrent.name!)
+    setEmail(userCurrent.email!)
+  }, [userCurrent])
+
+  const handlerOnSubUpdateProfil = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const res = await Store.user.updateProfil({
+      name,
+      email,
+    })
+    if (res) {
+      navigate('/user/profil')
     }
+  }
 
   return (
     <form onSubmit={handlerOnSubUpdateProfil}>
-      <LabelPrimary>Pseudo: </LabelPrimary>
       {/* input name */}
+      <LabelPrimary>Pseudo: </LabelPrimary>
       <InputFull
         placeholder='Renseigner votre pseudo'
-        value={name}
+        value={name ?? ''}
         setValueInput={setName}
         activeReset
         required
       />
-      <LabelPrimary>Nouveau Pseudo : </LabelPrimary>
-      {/* input newName */}
-      <InputFull
-        placeholder='Renseigner votre nouveau pseudo'
-        value={newName}
-        setValueInput={setNewName}
-        activeReset
-        required
-      />
-      <LabelPrimary>Email: </LabelPrimary>
+
       {/* input email */}
+      <LabelPrimary>Email: </LabelPrimary>
       <InputFull
         placeholder='Renseigner votre email'
-        value={email}
+        value={email ?? ''}
         setValueInput={setEmail}
-        type='email'
-        activeReset
-        required
-      />
-      <LabelPrimary>Nouveau Email: </LabelPrimary>
-      {/* input name */}
-      <InputFull
-        placeholder='Renseigner votre nouveau email'
-        value={newEmail}
-        setValueInput={setNewEmail}
         type='email'
         activeReset
         required
@@ -75,10 +58,10 @@ export function FormUpdateProfil(profil: Iuser) {
 
       {/* btn form */}
       <div className='flex justify-end mt-4'>
-      {/* btn form */}
-      <div className='flex justify-end mt-4'>
-        <Btn submit>Modifier</Btn>
-      </div>
+        {/* btn form */}
+        <div className='flex justify-end mt-4'>
+          <Btn submit>Modifier</Btn>
+        </div>
       </div>
     </form>
   )

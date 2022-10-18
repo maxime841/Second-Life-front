@@ -1,11 +1,13 @@
 import { http } from '@config-app/http/http.instance'
 import { AppService } from '@store/app/app.service'
+import { Store } from '@store/store'
 import { TokenService } from '@store/token/token.service'
 import { Eerror } from '@types-app/error.type'
 import { Ijwt } from '@types-app/models/jwt.model'
 import {
   Iuser,
   IuserLogout,
+  IuserUpdateResponse,
   TresetPassword,
 } from '@types-app/models/user.model'
 import { Eroute } from '@types-app/route.type'
@@ -166,7 +168,7 @@ export const userService = {
     userStore.resetPasswordLoading$.next(true)
   },
 
-/**
+  /**
    * update picture via formData
    * @param picture IPicture
    */
@@ -184,14 +186,18 @@ export const userService = {
       return false
     }
   },
-/**
+  /**
    * update profil via FormData
    * @param profil Iuser
    */
   updateProfil: async (profil: any) => {
     try {
-      const res = await http.post(Eroute.UPLOAD_PROFIL, profil)
+      const res = await http.put<IuserUpdateResponse>(
+        Eroute.UPLOAD_PROFIL,
+        profil,
+      )
       console.log(res)
+      Store.user.setUserCurrent(res.data.user_updated)
     } catch (error) {
       AppService.errorMessage(
         userStore.resetPasswordError$,

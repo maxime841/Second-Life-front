@@ -14,6 +14,13 @@ export interface Iuser {
 }
 
 /**
+ * interface for response update user
+ */
+export interface IuserUpdateResponse {
+  user_updated: Iuser
+}
+
+/**
  * interface logout user current
  */
 export interface IuserLogout {
