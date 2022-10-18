@@ -6,7 +6,7 @@ export function FormUploadAvatar() {
   const handlerOnSub = async (e: any) => {
     e.preventDefault()
     const formData = new FormData()
-    formData.append('avatar', e.target.files[0])
+    formData.append('picture', e.target.files[0])
     await Store.user.updatePicture(formData)
   }
 

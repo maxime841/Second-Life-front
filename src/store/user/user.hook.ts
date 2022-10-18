@@ -132,4 +132,23 @@ export const userHook = {
 
     return picture
   },
+
+  /**
+   * hook for update profil
+   * @returns profil
+   */
+   useUpdateProfil: () => {
+    const [profil, setProfil] = useState({} as Iuser)
+
+    useEffect(() => {
+      async function updateProfil() {
+        await userService.updateProfil(profil)
+      }
+      userStore.updateProfil$.subscribe(value => setProfil(value))
+
+      updateProfil()
+    }, [])
+
+    return profil
+  },
 }

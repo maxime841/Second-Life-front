@@ -47,4 +47,9 @@ export const userStore = {
    * update picture user
    */
    updatePicture$: new BehaviorSubject({} as IPicture),
+
+   /**
+   * update profil user
+   */
+    updateProfil$: new BehaviorSubject({} as Iuser),
 }
