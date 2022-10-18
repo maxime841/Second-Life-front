@@ -25,7 +25,7 @@ export function FormUpdateProfil(profil: Iuser) {
         newEmail: newEmail!,
       })
       if (res) {
-        navigate('/login')
+        navigate('/user/profil')
       }
     }
 
