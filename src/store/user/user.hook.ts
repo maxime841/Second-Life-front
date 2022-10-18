@@ -138,17 +138,24 @@ export const userHook = {
    * @returns profil
    */
    useUpdateProfil: () => {
+    const [error, setError] = useState('')
     const [profil, setProfil] = useState({} as Iuser)
 
     useEffect(() => {
+      // reset error didmountcomponent
+      function cleanError() {
+        userService.resetError()
+      }
+
       async function updateProfil() {
         await userService.updateProfil(profil)
       }
+      userStore.updateProfilError$.subscribe(value => setError(value))
       userStore.updateProfil$.subscribe(value => setProfil(value))
-
+      cleanError()
       updateProfil()
     }, [])
 
-    return profil
+    return { error, profil }
   },
 }

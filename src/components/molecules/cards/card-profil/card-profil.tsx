@@ -36,7 +36,7 @@ export function CardProfil() {
               {/* <InputFull addClass='w-fit text-center' colors='bg-fond-cards' value={user.email} placeholder={''} setValueInput={setEmail} /> */}
               </article>
             </div>
-            <nav className='flex'>
+            <nav className='flex justify-center'>
             {/* volet detail profil update */}
             <VoletDetailProfilUpdate userCurrent={user} />
             {/* volet detail profil update */}

@@ -52,4 +52,9 @@ export const userStore = {
    * update profil user
    */
     updateProfil$: new BehaviorSubject({} as Iuser),
+
+    /**
+   * error update profil
+   */
+     updateProfilError$: new BehaviorSubject(''),
 }
