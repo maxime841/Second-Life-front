@@ -1,9 +1,6 @@
 import { Btn } from '@atoms/btns/btn'
-import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
-import { InputFull } from '@atoms/inputs/input-full'
-import { Store } from '@store/store'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { TvoletDetailUser } from './volet-detail-profil-update.type'
 import { FormUpdateProfil } from '@molecules/forms/form-update-profil/form-update-profil'
 

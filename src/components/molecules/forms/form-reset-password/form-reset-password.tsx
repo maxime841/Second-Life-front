@@ -24,7 +24,7 @@ export default function FormResetPassword() {
       token: token!,
     })
     if (res) {
-      navigate('/login')
+      navigate('/user/profil')
     }
     Store.user.disabledResetPasswordLoadding()
   }

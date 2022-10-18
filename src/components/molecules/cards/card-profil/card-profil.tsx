@@ -6,7 +6,7 @@ import { VoletDetailProfilUpdate } from '@molecules/volet-detail-profil-update/v
 import { VoletDetailProfilDelete } from '@molecules/volet-profil-delete/volet-profil-delete'
 import { VoletDetailProfilPasswordUpdate } from '@molecules/volet-profil-password-update/volet-profil-password-update'
 import { Store } from '@store/store'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export function CardProfil() {
   const [pseudo, setPseudo] = useState('')
