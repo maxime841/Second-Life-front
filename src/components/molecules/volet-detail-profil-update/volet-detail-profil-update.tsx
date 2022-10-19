@@ -1,10 +1,10 @@
 import { Btn } from '@atoms/btns/btn'
 import { TitleState } from '@atoms/title/title-stat/title-stat'
 import React, { useState } from 'react'
-import { TvoletDetailUser } from './volet-detail-profil-update.type'
+
 import { FormUpdateProfil } from '@molecules/forms/form-update-profil/form-update-profil'
 
-export function VoletDetailProfilUpdate({ userCurrent }: TvoletDetailUser) {
+export function VoletDetailProfilUpdate() {
   const [openMoreProfilUpdate, setOpenMoreProfilUpdate] = useState(false)
 
   const handlerClickOpenDetailProfilUpdate = () => {

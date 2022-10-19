@@ -3,30 +3,26 @@ import { ErrorText } from '@atoms/errors/error-text'
 import { InputFull } from '@atoms/inputs/input-full'
 import { Store } from '@store/store'
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-export default function FormUpdatePassword() {
-  const { error, loadingResetPassword } = Store.user.useResetPassword()
+export default function FormUpdatePassword(passwords: {}) {
+  const { error } = Store.user.useUpdatePasswordProfil(passwords)
   const navigate = useNavigate()
   const userCurrent = Store.user.useUserCurrent()
-  const [password, setPassword] = useState('')
-  const [valuePassword, setValuePassword] = useState('')
-  const [valuePasswordConfirme, setValuePasswordConfirme] = useState('')
+  const [updatePassword, setUpdatePassword] = useState({
+    currentPassword: '',
+    password: '',
+    passwordConfirme: ''
+  })
 
   useEffect(() => {
-    setPassword(userCurrent.password!)
-    setValuePassword(userCurrent.valuePassword!)
-    setValuePasswordConfirme(userCurrent.valuePasswordConfirme!)
+    setUpdatePassword({ ...updatePassword })
   }, [userCurrent])
 
-  const handlerResetPassword = async (e: React.FormEvent) => {
+  const handlerUpdatePassword = async (e: React.FormEvent) => {
     e.preventDefault()
     Store.user.activateResetPasswordLoadding()
-    const res = await Store.user.updatePasswordProfil({
-      password,
-      valuePassword,
-      valuePasswordConfirme,
-    })
+    const res = await Store.user.updatePasswordProfil(passwords)
     if (res) {
       navigate('/user/profil')
     }
@@ -34,12 +30,12 @@ export default function FormUpdatePassword() {
   }
 
   return (
-    <form onSubmit={handlerResetPassword}>
+    <form onSubmit={handlerUpdatePassword}>
        {/* input password current */}
        <InputFull
         placeholder='Mot de passe'
-        value={password ?? ''}
-        setValueInput={setPassword}
+        value={updatePassword.currentPassword ?? ''}
+        setValueInput={setUpdatePassword}
         addClass='mb-3'
         type='password'
         eye
@@ -49,8 +45,8 @@ export default function FormUpdatePassword() {
       {/* input password */}
       <InputFull
         placeholder='Nouveau mot de passe'
-        value={valuePassword ?? ''}
-        setValueInput={setValuePassword}
+        value={updatePassword.password ?? ''}
+        setValueInput={setUpdatePassword}
         addClass='mb-3'
         type='password'
         eye
@@ -60,8 +56,8 @@ export default function FormUpdatePassword() {
       {/* input password_confirmation */}
       <InputFull
         placeholder='Confirmer le nouveau mot de passe'
-        value={valuePasswordConfirme ?? ''}
-        setValueInput={setValuePasswordConfirme}
+        value={updatePassword.passwordConfirme ?? ''}
+        setValueInput={setUpdatePassword}
         addClass='mb-3'
         type='password'
         eye

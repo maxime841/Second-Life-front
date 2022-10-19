@@ -3,11 +3,10 @@ import { ErrorText } from '@atoms/errors/error-text'
 import { InputFull } from '@atoms/inputs/input-full'
 import { LabelPrimary } from '@atoms/labels/label-primary/label-primary'
 import { Store } from '@store/store'
-import { Iuser } from '@types-app/models/user.model'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export function FormUpdateProfil(profil: Iuser) {
+export function FormUpdateProfil() {
   const navigate = useNavigate()
   const userCurrent = Store.user.useUserCurrent()
   const { error } = Store.user.useUpdateProfil()
@@ -38,6 +37,7 @@ export function FormUpdateProfil(profil: Iuser) {
         placeholder='Renseigner votre pseudo'
         value={name ?? ''}
         setValueInput={setName}
+        type='text'
         activeReset
         required
       />

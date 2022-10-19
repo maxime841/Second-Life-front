@@ -51,11 +51,11 @@ export function CardProfil() {
       </div>
       <nav className='flex justify-center'>
         {/* volet detail profil update */}
-        <VoletDetailProfilUpdate userCurrent={user} />
-        {/* volet detail profil update */}
-        <VoletDetailProfilPasswordUpdate userCurrent={user} />
-        {/* volet detail profil update */}
-        <VoletDetailProfilDelete userCurrent={user} />
+        <VoletDetailProfilUpdate />
+        {/* volet detail password profil update */}
+        <VoletDetailProfilPasswordUpdate />
+        {/* volet detail profil delete */}
+        <VoletDetailProfilDelete />
       </nav>
     </article>
   )

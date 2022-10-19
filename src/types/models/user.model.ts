@@ -11,9 +11,10 @@ export interface Iuser {
   picture?: IPicture
   email_verified_at?: string
   role?: Irole
+  currentPassword?: string
   password?: string
-  valuePassword?: string
-  valuePasswordConfirme?: string
+  passwordConfirme?: string
+  deleteProfil?: boolean
 }
 
 /**
@@ -44,8 +45,8 @@ export type TresetPassword = {
  * type for update Password
  */
  export type TupdatePassword = {
-  currentPassword: Iuser
-  password_confirmation: Iuser
-  password: Iuser
+  currentPassword: string
+  password_confirmation: string
+  password: string
   token?: string
 }

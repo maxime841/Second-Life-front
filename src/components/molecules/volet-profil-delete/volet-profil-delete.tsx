@@ -5,7 +5,7 @@ import { FormDeleteProfil } from '@molecules/forms/form-delete-profil/form-delet
 import React, { useState } from 'react'
 import { TvoletDetailUser } from './volet-profil-delete.type'
 
-export function VoletDetailProfilDelete({ userCurrent }: TvoletDetailUser) {
+export function VoletDetailProfilDelete() {
   const [openMoreProfilDelete, setOpenMoreProfilDelete] = useState(false)
 
   const handlerClickOpenDetailProfilDelete = () => {

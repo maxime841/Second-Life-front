@@ -71,7 +71,7 @@ export const userStore = {
        /**
    * update password profil
    */
-       updatePasswordProfil$: new BehaviorSubject(false),
+       updatePasswordProfil$: new BehaviorSubject(''),
 
      /**
    * error update password profil

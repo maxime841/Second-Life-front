@@ -218,16 +218,16 @@ export const userService = {
    * update password via FormData
    * @param password string
    */
-   updatePasswordProfil: async (password: Iuser) => {
+   updatePasswordProfil: async (password: {}) => {
     try {
       const res = await http.put<TupdatePassword>(
         Eroute.UPDATE_PASSWORD,
         password,
       )
       console.log('res', res)
-      Store.user.setUserCurrent(res.data.currentPassword)
-      Store.user.setUserCurrent(res.data.password)
-      Store.user.setUserCurrent(res.data.password_confirmation)
+      Store.user.setUserUpdatePasswordCurrent(res.data.currentPassword)
+      Store.user.setUserUpdatePasswordCurrent(res.data.password)
+      Store.user.setUserUpdatePasswordCurrent(res.data.password_confirmation)
     } catch (error) {
       AppService.errorMessage(
         userStore.updatePasswordProfilError$,
@@ -237,6 +237,10 @@ export const userService = {
       userStore.resetPasswordLoading$.next(false)
       return false
     }
+  },
+
+  setUserUpdatePasswordCurrent: (password: string) => {
+    userStore.updatePasswordProfil$.next(password)
   },
 
   deleteProfil: async (profil: Iuser) => {
