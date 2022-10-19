@@ -2,26 +2,30 @@ import { Btn } from '@atoms/btns/btn'
 import { ErrorText } from '@atoms/errors/error-text'
 import { InputFull } from '@atoms/inputs/input-full'
 import { Store } from '@store/store'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
-export default function FormResetPassword() {
+export default function FormUpdatePassword() {
   const { error, loadingResetPassword } = Store.user.useResetPassword()
-  const [searchParams] = useSearchParams()
-  const token = searchParams.get('token')
-  const email = searchParams.get('email')
   const navigate = useNavigate()
+  const userCurrent = Store.user.useUserCurrent()
+  const [password, setPassword] = useState('')
   const [valuePassword, setValuePassword] = useState('')
   const [valuePasswordConfirme, setValuePasswordConfirme] = useState('')
+
+  useEffect(() => {
+    setPassword(userCurrent.password!)
+    setValuePassword(userCurrent.valuePassword!)
+    setValuePasswordConfirme(userCurrent.valuePasswordConfirme!)
+  }, [userCurrent])
 
   const handlerResetPassword = async (e: React.FormEvent) => {
     e.preventDefault()
     Store.user.activateResetPasswordLoadding()
-    const res = await Store.user.resetPassword({
-      password: valuePassword,
-      password_confirmation: valuePasswordConfirme,
-      email: email!,
-      token: token!,
+    const res = await Store.user.updatePasswordProfil({
+      password,
+      valuePassword,
+      valuePasswordConfirme,
     })
     if (res) {
       navigate('/user/profil')
@@ -31,10 +35,21 @@ export default function FormResetPassword() {
 
   return (
     <form onSubmit={handlerResetPassword}>
+       {/* input password current */}
+       <InputFull
+        placeholder='Mot de passe'
+        value={password ?? ''}
+        setValueInput={setPassword}
+        addClass='mb-3'
+        type='password'
+        eye
+        required
+      />
+
       {/* input password */}
       <InputFull
         placeholder='Nouveau mot de passe'
-        value={valuePassword}
+        value={valuePassword ?? ''}
         setValueInput={setValuePassword}
         addClass='mb-3'
         type='password'
@@ -45,7 +60,7 @@ export default function FormResetPassword() {
       {/* input password_confirmation */}
       <InputFull
         placeholder='Confirmer le nouveau mot de passe'
-        value={valuePasswordConfirme}
+        value={valuePasswordConfirme ?? ''}
         setValueInput={setValuePasswordConfirme}
         addClass='mb-3'
         type='password'

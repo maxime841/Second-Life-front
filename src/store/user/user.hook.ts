@@ -184,4 +184,30 @@ export const userHook = {
 
     return { error, deleteProfil }
   },
+
+  /**
+   * hook for update password profil
+   * @returns password profil updated
+   */
+   useUpdatePasswordProfil: (password: Iuser) => {
+    const [error, setError] = useState('')
+    const [passwordProfil, setPasswordProfil] = useState(false)
+
+    useEffect(() => {
+      // reset error didmountcomponent
+      function cleanError() {
+        userService.resetError()
+      }
+
+      async function updatePasswordProfil() {
+        await userService.updatePasswordProfil(password)
+      }
+      userStore.updatePasswordProfilError$.subscribe(value => setError(value))
+      userStore.updatePasswordProfil$.subscribe(value => setPasswordProfil(value))
+      cleanError()
+      updatePasswordProfil()
+    }, [password])
+
+    return { error, passwordProfil }
+  },
 }

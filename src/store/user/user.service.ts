@@ -9,6 +9,7 @@ import {
   IuserLogout,
   IuserUpdateResponse,
   TresetPassword,
+  TupdatePassword,
 } from '@types-app/models/user.model'
 import { Eroute } from '@types-app/route.type'
 import { userStore } from './user.store'
@@ -193,14 +194,41 @@ export const userService = {
   updateProfil: async (profil: any) => {
     try {
       const res = await http.put<IuserUpdateResponse>(
-        Eroute.UPLOAD_PROFIL,
+        Eroute.UPDATE_PROFIL,
         profil,
       )
       console.log(res)
       Store.user.setUserCurrent(res.data.user_updated)
+      AppService.errorMessage(
+        userStore.updateProfilError$,
+        Eerror.UPDTATE_PROFIL,
+      )
     } catch (error) {
       AppService.errorMessage(
-        userStore.resetPasswordError$,
+        userStore.updateProfilError$,
+        error,
+        Eerror.FORGOT_PASSWORD,
+      )
+      userStore.resetPasswordLoading$.next(false)
+      return false
+    }
+  },
+
+  /**
+   * update password via FormData
+   * @param password string
+   */
+   updatePasswordProfil: async (password: Iuser) => {
+    try {
+      const res = await http.put<TupdatePassword>(
+        Eroute.UPDATE_PASSWORD,
+        password,
+      )
+      console.log('res', res)
+      Store.user.setUserCurrent(res.data.currentPassword)
+    } catch (error) {
+      AppService.errorMessage(
+        userStore.updatePasswordProfilError$,
         error,
         Eerror.FORGOT_PASSWORD,
       )
