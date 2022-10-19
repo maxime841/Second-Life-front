@@ -226,6 +226,8 @@ export const userService = {
       )
       console.log('res', res)
       Store.user.setUserCurrent(res.data.currentPassword)
+      Store.user.setUserCurrent(res.data.password)
+      Store.user.setUserCurrent(res.data.password_confirmation)
     } catch (error) {
       AppService.errorMessage(
         userStore.updatePasswordProfilError$,
