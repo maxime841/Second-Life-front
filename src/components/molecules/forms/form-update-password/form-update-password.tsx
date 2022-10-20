@@ -5,24 +5,23 @@ import { Store } from '@store/store'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function FormUpdatePassword(passwords: {}) {
-  const { error } = Store.user.useUpdatePasswordProfil(passwords)
+export default function FormUpdatePassword() {
+  const { error } = Store.user.useUpdatePasswordProfil()
   const navigate = useNavigate()
   const userCurrent = Store.user.useUserCurrent()
-  const [updatePassword, setUpdatePassword] = useState({
-    currentPassword: '',
-    password: '',
-    passwordConfirme: ''
-  })
-
+  const [current_password, setCurrentPassword] = useState('')
+  const [password, setPassword] = useState('')
+  const [passwordConfirme, setPasswordConfirme] = useState('')
   useEffect(() => {
-    setUpdatePassword({ ...updatePassword })
+    setCurrentPassword(current_password)
+    setPassword(password)
+    setPasswordConfirme(passwordConfirme)
   }, [userCurrent])
 
   const handlerUpdatePassword = async (e: React.FormEvent) => {
     e.preventDefault()
     Store.user.activateResetPasswordLoadding()
-    const res = await Store.user.updatePasswordProfil(passwords)
+    const res = await Store.user.updatePasswordProfil()
     if (res) {
       navigate('/user/profil')
     }
@@ -34,8 +33,8 @@ export default function FormUpdatePassword(passwords: {}) {
        {/* input password current */}
        <InputFull
         placeholder='Mot de passe'
-        value={updatePassword.currentPassword ?? ''}
-        setValueInput={setUpdatePassword}
+        value={current_password ?? ''}
+        setValueInput={setCurrentPassword}
         addClass='mb-3'
         type='password'
         eye
@@ -45,8 +44,8 @@ export default function FormUpdatePassword(passwords: {}) {
       {/* input password */}
       <InputFull
         placeholder='Nouveau mot de passe'
-        value={updatePassword.password ?? ''}
-        setValueInput={setUpdatePassword}
+        value={password ?? ''}
+        setValueInput={setPassword}
         addClass='mb-3'
         type='password'
         eye
@@ -56,8 +55,8 @@ export default function FormUpdatePassword(passwords: {}) {
       {/* input password_confirmation */}
       <InputFull
         placeholder='Confirmer le nouveau mot de passe'
-        value={updatePassword.passwordConfirme ?? ''}
-        setValueInput={setUpdatePassword}
+        value={passwordConfirme ?? ''}
+        setValueInput={setPasswordConfirme}
         addClass='mb-3'
         type='password'
         eye

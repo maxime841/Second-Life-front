@@ -189,7 +189,7 @@ export const userHook = {
    * hook for update password profil
    * @returns password profil updated
    */
-   useUpdatePasswordProfil: (passwords: {}) => {
+   useUpdatePasswordProfil: () => {
     const [error, setError] = useState('')
     const [passwordProfil, setPasswordProfil] = useState('')
 
@@ -200,13 +200,13 @@ export const userHook = {
       }
 
       async function updatePasswordProfil() {
-        await userService.updatePasswordProfil(passwords)
+        await userService.updatePasswordProfil()
       }
       userStore.updatePasswordProfilError$.subscribe(value => setError(value))
       userStore.updatePasswordProfil$.subscribe(value => setPasswordProfil(value))
       cleanError()
       updatePasswordProfil()
-    }, [passwords])
+    }, [])
 
     return { error, passwordProfil }
   },

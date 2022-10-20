@@ -218,11 +218,10 @@ export const userService = {
    * update password via FormData
    * @param password string
    */
-   updatePasswordProfil: async (password: {}) => {
+   updatePasswordProfil: async () => {
     try {
       const res = await http.put<TupdatePassword>(
         Eroute.UPDATE_PASSWORD,
-        password,
       )
       console.log('res', res)
       Store.user.setUserUpdatePasswordCurrent(res.data.currentPassword)

@@ -16,6 +16,7 @@ module.exports = {
   ignorePatterns: ['*.json', '.eslintrc.js', '*.css', 'tailwind.config.js'],
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    camelcase: 0,
     'no-unused-vars': 0,
     indent: 0,
     'multiline-ternary': 0,
